@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\playg\\Documents\\GitHub\\Lab4_ProgramowanieObiektowe\\lab3\\lab3.csproj",
-      "projectName": "lab3",
-      "projectPath": "C:\\Users\\playg\\Documents\\GitHub\\Lab4_ProgramowanieObiektowe\\lab3\\lab3.csproj",
+      "projectUniqueName": "C:\\Users\\playg\\Documents\\GitHub\\Lab4_ProgramowanieObiektowe\\lab3\\ConsoleApp.csproj",
+      "projectName": "ConsoleApp",
+      "projectPath": "C:\\Users\\playg\\Documents\\GitHub\\Lab4_ProgramowanieObiektowe\\lab3\\ConsoleApp.csproj",
       "packagesPath": "C:\\Users\\playg\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\playg\\Documents\\GitHub\\Lab4_ProgramowanieObiektowe\\lab3\\obj\\",
       "projectStyle": "PackageReference",
