@@ -6,5 +6,6 @@ namespace ConsoleApp.Logger
 {
     internal class CommonLogger
     {
+        public abstract void Dispose();
     }
 }

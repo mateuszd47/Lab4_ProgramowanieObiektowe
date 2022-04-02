@@ -6,5 +6,6 @@ namespace ConsoleApp.Logger
 {
     internal class SocketLogger
     {
+        public abstract void Dispose();
     }
 }
