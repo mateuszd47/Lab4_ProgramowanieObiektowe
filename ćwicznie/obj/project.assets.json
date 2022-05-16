@@ -8,28 +8,25 @@
     "net5.0": []
   },
   "packageFolders": {
-    "D:\\Users\\Mateusz.Dynur\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\playg\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\Mateusz.Dynur\\source\\repos\\ćwicznie\\ćwicznie.csproj",
+      "projectUniqueName": "C:\\Users\\playg\\Documents\\GitHub\\Lab4_ProgramowanieObiektowe\\ćwicznie\\ćwicznie.csproj",
       "projectName": "ćwicznie",
-      "projectPath": "D:\\Users\\Mateusz.Dynur\\source\\repos\\ćwicznie\\ćwicznie.csproj",
-      "packagesPath": "D:\\Users\\Mateusz.Dynur\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\Mateusz.Dynur\\source\\repos\\ćwicznie\\obj\\",
+      "projectPath": "C:\\Users\\playg\\Documents\\GitHub\\Lab4_ProgramowanieObiektowe\\ćwicznie\\ćwicznie.csproj",
+      "packagesPath": "C:\\Users\\playg\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\playg\\Documents\\GitHub\\Lab4_ProgramowanieObiektowe\\ćwicznie\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "D:\\Users\\Mateusz.Dynur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\playg\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -68,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
