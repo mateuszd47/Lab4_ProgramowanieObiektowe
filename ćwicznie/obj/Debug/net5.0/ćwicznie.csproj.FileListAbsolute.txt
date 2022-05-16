@@ -1,0 +1,16 @@
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\bin\Debug\net5.0\ćwicznie.exe
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\bin\Debug\net5.0\ćwicznie.deps.json
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\bin\Debug\net5.0\ćwicznie.runtimeconfig.json
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\bin\Debug\net5.0\ćwicznie.runtimeconfig.dev.json
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\bin\Debug\net5.0\ćwicznie.dll
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\bin\Debug\net5.0\ref\ćwicznie.dll
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\bin\Debug\net5.0\ćwicznie.pdb
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\obj\Debug\net5.0\ćwicznie.csproj.AssemblyReference.cache
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\obj\Debug\net5.0\ćwicznie.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\obj\Debug\net5.0\ćwicznie.AssemblyInfoInputs.cache
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\obj\Debug\net5.0\ćwicznie.AssemblyInfo.cs
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\obj\Debug\net5.0\ćwicznie.csproj.CoreCompileInputs.cache
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\obj\Debug\net5.0\ćwicznie.dll
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\obj\Debug\net5.0\ref\ćwicznie.dll
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\obj\Debug\net5.0\ćwicznie.pdb
+D:\Users\Mateusz.Dynur\source\repos\ćwicznie\obj\Debug\net5.0\ćwicznie.genruntimeconfig.cache
