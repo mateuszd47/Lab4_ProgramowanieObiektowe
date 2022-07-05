@@ -1,0 +1,16 @@
+C:\Users\playg\Desktop\ProjectWPF\bin\Debug\ProjectWPF.exe.config
+C:\Users\playg\Desktop\ProjectWPF\bin\Debug\ProjectWPF.exe
+C:\Users\playg\Desktop\ProjectWPF\bin\Debug\ProjectWPF.pdb
+C:\Users\playg\Desktop\ProjectWPF\obj\Debug\ProjectWPF.csproj.AssemblyReference.cache
+C:\Users\playg\Desktop\ProjectWPF\obj\Debug\ProjectWPF.csproj.SuggestedBindingRedirects.cache
+C:\Users\playg\Desktop\ProjectWPF\obj\Debug\MainWindow.g.cs
+C:\Users\playg\Desktop\ProjectWPF\obj\Debug\App.g.cs
+C:\Users\playg\Desktop\ProjectWPF\obj\Debug\ProjectWPF_MarkupCompile.cache
+C:\Users\playg\Desktop\ProjectWPF\obj\Debug\ProjectWPF_MarkupCompile.lref
+C:\Users\playg\Desktop\ProjectWPF\obj\Debug\MainWindow.baml
+C:\Users\playg\Desktop\ProjectWPF\obj\Debug\ProjectWPF.g.resources
+C:\Users\playg\Desktop\ProjectWPF\obj\Debug\ProjectWPF.Properties.Resources.resources
+C:\Users\playg\Desktop\ProjectWPF\obj\Debug\ProjectWPF.csproj.GenerateResource.cache
+C:\Users\playg\Desktop\ProjectWPF\obj\Debug\ProjectWPF.csproj.CoreCompileInputs.cache
+C:\Users\playg\Desktop\ProjectWPF\obj\Debug\ProjectWPF.exe
+C:\Users\playg\Desktop\ProjectWPF\obj\Debug\ProjectWPF.pdb
