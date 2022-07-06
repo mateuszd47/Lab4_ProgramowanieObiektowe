@@ -153,3 +153,13 @@ INSERT INTO Zamowienia_Klient(data_zlozenia_zamowienia,id_zamowienia,id_klient)
 	('2022-07-15',1,6),
 	('2022-10-12',6,6),
 	('2022-11-25',7,5)
+	
+	
+-- Sprawdzenie działania tabeli
+
+SELECT * fROM HodowcaPL
+SELECT * fROM Kategoria
+SELECT * fROM Klienci
+SELECT * fROM Produkt
+SELECT * fROM Zamowienia
+SELECT * fROM Zamowienia_Klient
