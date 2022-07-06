@@ -65,7 +65,9 @@ CREATE TABLE [dbo].[Zamowienia_Klient](
 CREATE TABLE [dbo].[Zamowienia_Klient](
 	[id_zamowienia] [int] NOT NULL FOREIGN KEY REFERENCES Zamowienia(id_zamowienia),
 	[data_zlozenia_zamowienia] [datetime] NOT NULL,
-	[id_klient] [int] NOT NULL FOREIGN KEY REFERENCES Klienci(id_klien
+	[id_klient] [int] NOT NULL FOREIGN KEY REFERENCES Klienciid_klient)
+)
+
 
 -- Dane wsadowe do tabel
 
@@ -74,7 +76,7 @@ USE [SkelpAkwarystyczny]
 INSERT INTO HodowcaPL (login,password,adres_email)
 	VALUES ('Robert','dXDw15gyK9','robert@hodowca.pl'),
 	('Zosia','waS13BbPZU','zosia.k@ghodowca.pl'),
-	('Tomasz','Riwgy7ikZ7','tomek@hodowca.pl'),
+	('Tomasz','Riwgy7ikZ7','tomek@hodowca.pl')
 
 INSERT INTO Kategoria (nazwa_kategori)
 	VALUES ('Ryby'),
