@@ -5,8 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="740" Width="1280"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Border CornerRadius="10"
+                BorderThickness="2"
+                Opacity="0.9">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#DA34AE" Offset="0.75"/>
+                <GradientStop Color="#8A16C1" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border CornerRadius="10,0,0,10">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#462AD8" Offset="0"/>
+                        <GradientStop Color="#8A16C1" Offset="0.9"/>
+                        <GradientStop Color="#060531" Offset="1"/>
+                    </LinearGradientBrush>
+            </Border.Background>
+
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 35 0 0">
+                    <Border CornerRadius="10" Width="40" Height="40" >
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#7f7cf1" Offset="0"/>
+                                <GradientStop Color="#d3b7ff" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                            <TextBlock Text="A" Foreground="#ffffff" FontSize="22" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3 0"/>
+                        </Border>
+                        <StackPanel Margin="10 0 0 0 " VerticalAlignment="Center">
+                            <TextBlock Text="Admin" FontSize="15" Margin="0 0 0 5" Foreground="#ffffff"/>
+                        </StackPanel>
+                </StackPanel>
+                
+                    <Separator Height="0.8" Margin="20 30" Background="#d3b7ff"/>
+
+                    <Button Style="{StaticResource menuButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Dasboard"/>
+                        </StackPanel>
+                    </Button>
+            </StackPanel>
+            
+        </Border>
         
+        <Border Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                        <GradientStop Color="#060531" Offset="0"/>
+                        <GradientStop Color="#1b1448" Offset="0.75"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
     </Grid>
+    </Border>
 </Window>
+

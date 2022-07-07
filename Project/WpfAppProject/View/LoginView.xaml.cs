@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,19 +34,50 @@ namespace WpfAppProject.View
             }
         }
 
-        private void btnClose_Click(object sender, RoutedEventArgs e)
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        private void BtnMinimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            SqlConnection sqlCon = new SqlConnection(@"Data Source=MATEUSZ;Initial Catalog=SkelpyAkwarystyczne;Integrated Security=True;");
+            try
+            {
+                if (sqlCon.State == ConnectionState.Closed)
+                    sqlCon.Open();
+                string query = "SELECT COUNT(1) FROM Users WHERE login=@login AND password=@password";
+                SqlCommand sqlCMD = new SqlCommand(query, sqlCon)
+                {
+                    CommandType = CommandType.Text
+                };
+                sqlCMD.Parameters.AddWithValue("@login", txtUser.Text);
+                sqlCMD.Parameters.AddWithValue("@password", txtPassword.Password);
+                int count = Convert.ToInt32(sqlCMD.ExecuteScalar());
+                if(count == 1)
+                {
+                    MainWindow dashbord = new MainWindow();
+                    dashbord.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Username or password is iscorrent");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlCon.Close();
+            }
         }
     }
 }

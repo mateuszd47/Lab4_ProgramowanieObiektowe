@@ -63,7 +63,7 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Grid.Column="1"
-                            Click="btnMinimize_Click">
+                            Click="BtnMinimize_Click">
                         
                         <Button.Style>
                             <Style TargetType="Button">
@@ -98,7 +98,7 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Grid.Column="2"
-                            Click="btnClose_Click"
+                            Click="BtnClose_Click"
                             >
                         <Button.Style>
                             <Style TargetType="Button">
@@ -170,7 +170,7 @@
                                FontWeight="Medium"
                                FontFamily="Montserrat"                             
                                Margin="0,15,0,0"/>
-                    <PasswordBox x:Name="txtPass"
+                    <PasswordBox x:Name="txtPassword"
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Montserrat"                            
@@ -197,7 +197,7 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"                           
                             Margin="0,50,0,0"
-                            Click="btnLogin_Click">
+                            Click="BtnLogin_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#462AD8"/>
