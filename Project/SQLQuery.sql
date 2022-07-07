@@ -52,7 +52,7 @@ CREATE TABLE [dbo].[Klienci](
 	[nazwisko] [varchar](100) NOT NULL,
 <<<<<<< HEAD
 	[kodPocztowy] [varchar](100) NOT NULL,
-	[miesjcowoœæ] [varchar](100) NOT NULL,
+	[miesjcowoï¿½ï¿½] [varchar](100) NOT NULL,
 	[telefon] [varchar](11) NOT NULL,
 )
 CREATE TABLE [dbo].[Kategoria](
@@ -250,4 +250,3 @@ SELECT * fROM Klienci
 SELECT * fROM Produkt
 SELECT * fROM Zamowienia
 SELECT * fROM Zamowienia_Klient
->>>>>>> 7ce3a4f299edc8f351624dbfc83c20b49784e8d3
