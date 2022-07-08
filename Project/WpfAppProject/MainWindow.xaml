@@ -4,16 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppProject"
+        
         mc:Ignorable="d"
         Title="MainWindow" Height="740" Width="1280"
-        WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
         AllowsTransparency="True"
-        Background="Transparent">
+        Background="Transparent"
+        >
     <Border CornerRadius="10"
                 BorderThickness="2"
-                Opacity="0.9">
+                >
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                 <GradientStop Color="#462AD8" Offset="0"/>
@@ -35,32 +37,28 @@
                     </LinearGradientBrush>
             </Border.Background>
 
-            <StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 35 0 0">
-                    <Border CornerRadius="10" Width="40" Height="40" >
-                        <Border.Background>
-                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                                <GradientStop Color="#7f7cf1" Offset="0"/>
-                                <GradientStop Color="#d3b7ff" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Border.Background>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 35 0 0">
+                        <Border CornerRadius="10" Width="40" Height="40" >
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                    <GradientStop Color="#7f7cf1" Offset="0"/>
+                                    <GradientStop Color="#d3b7ff" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
                             <TextBlock Text="A" Foreground="#ffffff" FontSize="22" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3 0"/>
                         </Border>
                         <StackPanel Margin="10 0 0 0 " VerticalAlignment="Center">
                             <TextBlock Text="Admin" FontSize="15" Margin="0 0 0 5" Foreground="#ffffff"/>
                         </StackPanel>
-                </StackPanel>
-                
+                    </StackPanel>
+
                     <Separator Height="0.8" Margin="20 30" Background="#d3b7ff"/>
 
-                    <Button Style="{StaticResource menuButton}">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Dasboard"/>
-                        </StackPanel>
-                    </Button>
-            </StackPanel>
-            
-        </Border>
+                    <Button></Button>
+                    
+                </StackPanel>
+            </Border>
         
         <Border Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown">
                 <Border.Background>
@@ -69,6 +67,87 @@
                         <GradientStop Color="#1b1448" Offset="0.75"/>
                     </LinearGradientBrush>
                 </Border.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="5"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="btnMinimize"                           
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="BtnMinimize_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+                    <Button x:Name="btnClose"                          
+                            BorderThickness="0"
+                            Content="X"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Click="BtnClose_Click"
+                            >
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#DA34AE"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#C62DAE"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                </Grid>
+                </Grid>
             </Border>
     </Grid>
     </Border>

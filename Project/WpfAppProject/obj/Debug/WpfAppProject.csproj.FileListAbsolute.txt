@@ -34,3 +34,5 @@ C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProjec
 C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\WpfAppProject.csproj.CoreCompileInputs.cache
 C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\WpfAppProject.exe
 C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\WpfAppProject.pdb
+C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\WpfAppProject.csproj.CopyComplete
