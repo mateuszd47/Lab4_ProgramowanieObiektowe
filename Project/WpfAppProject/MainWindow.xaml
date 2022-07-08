@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfAppProject"
         
         mc:Ignorable="d"
-        Title="MainWindow" Height="740" Width="1280"
+        Title="MainWindow" Height="740" Width="1280" Icon="Images/LOGO.PNG"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
@@ -55,8 +55,136 @@
 
                     <Separator Height="0.8" Margin="20 30" Background="#d3b7ff"/>
 
-                    <Button></Button>
-                    
+                    <StackPanel>
+                        <Button x:Name="btnKlienci"                         
+                            BorderThickness="0"
+                            Content="Klienci"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="BtnKlienci_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#28AEED"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+                        <Button x:Name="btnZamowienia"                         
+                            BorderThickness="0"
+                            Content="Zamowienia"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="BtnZamowienia_Click">
+                           
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#28AEED"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+                        <Button x:Name="btnProdukty"                         
+                            BorderThickness="0"
+                            Content="Produkty"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="BtnProdukty_Click">
+                            
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#28AEED"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+                        <Button x:Name="btnLogOut"                         
+                            BorderThickness="0"
+                            Content="Log Out"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="BtnLogOut_Click">
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#28AEED"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+                    </StackPanel>
+
                 </StackPanel>
             </Border>
         

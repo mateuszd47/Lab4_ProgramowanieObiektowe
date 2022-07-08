@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using WpfAppProject.View;
+
 namespace WpfAppProject
 {
     /// <summary>
@@ -41,6 +43,28 @@ namespace WpfAppProject
         private void BtnMinimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
+        }
+
+        private void BtnProdukty_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnZamowienia_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnKlienci_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            LoginView LoginPage = new LoginView();
+            LoginPage.Show();
+            this.Close();
         }
     }
 }
