@@ -128,7 +128,7 @@
                             Cursor="Hand"
                             Grid.Column="1"
                             Click="BtnProdukty_Click">
-                            
+
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Background" Value="Transparent"/>
@@ -183,6 +183,7 @@
                             </Button.Template>
 
                         </Button>
+
                     </StackPanel>
 
                 </StackPanel>
@@ -200,13 +201,15 @@
                         <RowDefinition Height="30"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Grid>
+                    <Grid Grid.Row="0" >
+                        
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition Width="25"/>
                             <ColumnDefinition Width="25"/>
                             <ColumnDefinition Width="5"/>
                         </Grid.ColumnDefinitions>
+                        
                         <Button x:Name="btnMinimize"                           
                             BorderThickness="0"
                             Content="-"
@@ -273,11 +276,20 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
+                      
+
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Frame x:Name="MainPages" NavigationUIVisibility="Hidden"/>
+                    </Grid>
 
                 </Grid>
-                </Grid>
+
+                
+                
+                    
             </Border>
-    </Grid>
+        </Grid>
     </Border>
 </Window>
 

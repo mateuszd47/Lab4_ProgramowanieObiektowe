@@ -36,3 +36,9 @@ C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProjec
 C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\WpfAppProject.pdb
 C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\WpfAppProject.csproj.CopyComplete
+C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\Pages\Klienci.g.cs
+C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\Pages\Produkty.g.cs
+C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\Pages\Zamowienia.g.cs
+C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\Pages\Klienci.baml
+C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\Pages\Produkty.baml
+C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\Pages\Zamowienia.baml
