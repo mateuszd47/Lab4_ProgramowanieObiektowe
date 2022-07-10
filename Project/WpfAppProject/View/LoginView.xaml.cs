@@ -46,7 +46,7 @@ namespace WpfAppProject.View
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"Data Source=MATEUSZ;Initial Catalog=SkelpyAkwarystyczne;Integrated Security=True;");
+            SqlConnection sqlCon = new SqlConnection(@"Data Source=MATEUSZ;Initial Catalog=SkelpAkwarystyczny;Integrated Security=True;");
             try
             {
                 if (sqlCon.State == ConnectionState.Closed)

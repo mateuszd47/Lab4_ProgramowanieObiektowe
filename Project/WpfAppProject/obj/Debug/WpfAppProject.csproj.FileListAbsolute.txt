@@ -42,3 +42,8 @@ C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProjec
 C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\Pages\Klienci.baml
 C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\Pages\Produkty.baml
 C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\Pages\Zamowienia.baml
+C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\obj\Debug\WpfAppProject_Content.g.cs
+C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\bin\Debug\EntityFramework.dll
+C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\bin\Debug\EntityFramework.xml
+C:\Users\playg\Documents\GitHub\Lab4_ProgramowanieObiektowe\Project\WpfAppProject\bin\Debug\EntityFramework.SqlServer.xml

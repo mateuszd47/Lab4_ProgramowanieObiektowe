@@ -8,11 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/bin/debug/menuwithsubmenu.exe")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/bin/debug/menuwithsubmenu.pdb")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/menuwithsubmenu.sln")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/obj/debug/menuwithsubmenu.exe")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/obj/debug/menuwithsubmenu.pdb")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/obj/debug/temppe/properties.resources.designer.cs.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model1.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model1.tt")]
 
 

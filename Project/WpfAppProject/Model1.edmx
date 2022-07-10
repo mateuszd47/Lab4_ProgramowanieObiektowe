@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SkelpAkwarystycznyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="HodowcaPL">
+          <Key>
+            <PropertyRef Name="id_hodowcaPL" />
+          </Key>
+          <Property Name="id_hodowcaPL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imie" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nazwisko" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="telefon" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="adres_email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="adres" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SkelpAkwarystyczny.dbo.HodowcaPL_Importer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="HodowcaPL_Importer">
+          <Key>
+            <PropertyRef Name="id_produktu" />
+          </Key>
+          <Property Name="id_produktu" Type="int" Nullable="false" />
+          <Property Name="id_hodowcaPL" Type="int" />
+          <Property Name="id_importer" Type="int" />
+        </EntityType>
+        <EntityType Name="Importer">
+          <Key>
+            <PropertyRef Name="id_importer" />
+          </Key>
+          <Property Name="id_importer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imie" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nazwisko" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="telefon" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="adres_email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="adres" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Kraj" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kategoria">
+          <Key>
+            <PropertyRef Name="id_kategoria" />
+          </Key>
+          <Property Name="id_kategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa_kategori" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Klienci">
+          <Key>
+            <PropertyRef Name="id_klient" />
+          </Key>
+          <Property Name="id_klient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imie" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nazwisko" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="telefon" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="adres_email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="adres" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="kodpocztowy" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="miejscowośc" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="klient_staly" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Produkt">
+          <Key>
+            <PropertyRef Name="id_produktu" />
+          </Key>
+          <Property Name="id_produktu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa_produktu" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="cena_netto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="cena_brutto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="id_kategoria" Type="int" Nullable="false" />
+          <Property Name="dostepnych_sztuk" Type="int" />
+          <Property Name="dostepny" Type="bit" />
+        </EntityType>
+        <EntityType Name="SklepyStacjonarne">
+          <Key>
+            <PropertyRef Name="id_sklepu" />
+          </Key>
+          <Property Name="id_sklepu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa_sklepu" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="telefon" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="adres_email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="adres" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="kodpocztowy" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="miejscowość" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="login" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zamowienia">
+          <Key>
+            <PropertyRef Name="id_zamowienia" />
+          </Key>
+          <Property Name="id_zamowienia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_produktu" Type="int" Nullable="false" />
+          <Property Name="sztuk" Type="int" Nullable="false" />
+          <Property Name="czy_odebrano" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SkelpAkwarystyczny.dbo.Zamowienia_Klient' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Zamowienia_Klient">
+          <Key>
+            <PropertyRef Name="id_zamowienia" />
+            <PropertyRef Name="data_zlozenia_zamowienia" />
+            <PropertyRef Name="id_klient" />
+          </Key>
+          <Property Name="id_zamowienia" Type="int" Nullable="false" />
+          <Property Name="data_zlozenia_zamowienia" Type="datetime" Nullable="false" />
+          <Property Name="id_klient" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SkelpAkwarystyczny.dbo.Zamowienia_SklepStacjonarny' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Zamowienia_SklepStacjonarny">
+          <Key>
+            <PropertyRef Name="id_zamowienia" />
+            <PropertyRef Name="data_zlozenia_zamowienia" />
+            <PropertyRef Name="id_SklepStacjonarny" />
+          </Key>
+          <Property Name="id_zamowienia" Type="int" Nullable="false" />
+          <Property Name="data_zlozenia_zamowienia" Type="datetime" Nullable="false" />
+          <Property Name="id_SklepStacjonarny" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__HodowcaPL__id_ho__2F10007B">
+          <End Role="HodowcaPL" Type="Self.HodowcaPL" Multiplicity="0..1" />
+          <End Role="HodowcaPL_Importer" Type="Self.HodowcaPL_Importer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HodowcaPL">
+              <PropertyRef Name="id_hodowcaPL" />
+            </Principal>
+            <Dependent Role="HodowcaPL_Importer">
+              <PropertyRef Name="id_hodowcaPL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HodowcaPL__id_im__300424B4">
+          <End Role="Importer" Type="Self.Importer" Multiplicity="0..1" />
+          <End Role="HodowcaPL_Importer" Type="Self.HodowcaPL_Importer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Importer">
+              <PropertyRef Name="id_importer" />
+            </Principal>
+            <Dependent Role="HodowcaPL_Importer">
+              <PropertyRef Name="id_importer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HodowcaPL__id_pr__2E1BDC42">
+          <End Role="Produkt" Type="Self.Produkt" Multiplicity="1" />
+          <End Role="HodowcaPL_Importer" Type="Self.HodowcaPL_Importer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Produkt">
+              <PropertyRef Name="id_produktu" />
+            </Principal>
+            <Dependent Role="HodowcaPL_Importer">
+              <PropertyRef Name="id_produktu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Produkt__id_kate__2C3393D0">
+          <End Role="Kategoria" Type="Self.Kategoria" Multiplicity="1" />
+          <End Role="Produkt" Type="Self.Produkt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategoria">
+              <PropertyRef Name="id_kategoria" />
+            </Principal>
+            <Dependent Role="Produkt">
+              <PropertyRef Name="id_kategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Zamowieni__id_kl__398D8EEE">
+          <End Role="Klienci" Type="Self.Klienci" Multiplicity="1" />
+          <End Role="Zamowienia_Klient" Type="Self.Zamowienia_Klient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klienci">
+              <PropertyRef Name="id_klient" />
+            </Principal>
+            <Dependent Role="Zamowienia_Klient">
+              <PropertyRef Name="id_klient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Zamowieni__id_pr__36B12243">
+          <End Role="Produkt" Type="Self.Produkt" Multiplicity="1" />
+          <End Role="Zamowienia" Type="Self.Zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produkt">
+              <PropertyRef Name="id_produktu" />
+            </Principal>
+            <Dependent Role="Zamowienia">
+              <PropertyRef Name="id_produktu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Zamowieni__id_Sk__3C69FB99">
+          <End Role="SklepyStacjonarne" Type="Self.SklepyStacjonarne" Multiplicity="1" />
+          <End Role="Zamowienia_SklepStacjonarny" Type="Self.Zamowienia_SklepStacjonarny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SklepyStacjonarne">
+              <PropertyRef Name="id_sklepu" />
+            </Principal>
+            <Dependent Role="Zamowienia_SklepStacjonarny">
+              <PropertyRef Name="id_SklepStacjonarny" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Zamowieni__id_za__38996AB5">
+          <End Role="Zamowienia" Type="Self.Zamowienia" Multiplicity="1" />
+          <End Role="Zamowienia_Klient" Type="Self.Zamowienia_Klient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zamowienia">
+              <PropertyRef Name="id_zamowienia" />
+            </Principal>
+            <Dependent Role="Zamowienia_Klient">
+              <PropertyRef Name="id_zamowienia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Zamowieni__id_za__3B75D760">
+          <End Role="Zamowienia" Type="Self.Zamowienia" Multiplicity="1" />
+          <End Role="Zamowienia_SklepStacjonarny" Type="Self.Zamowienia_SklepStacjonarny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zamowienia">
+              <PropertyRef Name="id_zamowienia" />
+            </Principal>
+            <Dependent Role="Zamowienia_SklepStacjonarny">
+              <PropertyRef Name="id_zamowienia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SkelpAkwarystycznyModelStoreContainer">
+          <EntitySet Name="HodowcaPL" EntityType="Self.HodowcaPL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Importer" EntityType="Self.Importer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kategoria" EntityType="Self.Kategoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Klienci" EntityType="Self.Klienci" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Produkt" EntityType="Self.Produkt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SklepyStacjonarne" EntityType="Self.SklepyStacjonarne" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zamowienia" EntityType="Self.Zamowienia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HodowcaPL_Importer" EntityType="Self.HodowcaPL_Importer" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [HodowcaPL_Importer].[id_produktu] AS [id_produktu], 
+    [HodowcaPL_Importer].[id_hodowcaPL] AS [id_hodowcaPL], 
+    [HodowcaPL_Importer].[id_importer] AS [id_importer]
+    FROM [dbo].[HodowcaPL_Importer] AS [HodowcaPL_Importer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Zamowienia_Klient" EntityType="Self.Zamowienia_Klient" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Zamowienia_Klient].[id_zamowienia] AS [id_zamowienia], 
+    [Zamowienia_Klient].[data_zlozenia_zamowienia] AS [data_zlozenia_zamowienia], 
+    [Zamowienia_Klient].[id_klient] AS [id_klient]
+    FROM [dbo].[Zamowienia_Klient] AS [Zamowienia_Klient]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Zamowienia_SklepStacjonarny" EntityType="Self.Zamowienia_SklepStacjonarny" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Zamowienia_SklepStacjonarny].[id_zamowienia] AS [id_zamowienia], 
+    [Zamowienia_SklepStacjonarny].[data_zlozenia_zamowienia] AS [data_zlozenia_zamowienia], 
+    [Zamowienia_SklepStacjonarny].[id_SklepStacjonarny] AS [id_SklepStacjonarny]
+    FROM [dbo].[Zamowienia_SklepStacjonarny] AS [Zamowienia_SklepStacjonarny]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__HodowcaPL__id_ho__2F10007B" Association="Self.FK__HodowcaPL__id_ho__2F10007B">
+            <End Role="HodowcaPL" EntitySet="HodowcaPL" />
+            <End Role="HodowcaPL_Importer" EntitySet="HodowcaPL_Importer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HodowcaPL__id_im__300424B4" Association="Self.FK__HodowcaPL__id_im__300424B4">
+            <End Role="Importer" EntitySet="Importer" />
+            <End Role="HodowcaPL_Importer" EntitySet="HodowcaPL_Importer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HodowcaPL__id_pr__2E1BDC42" Association="Self.FK__HodowcaPL__id_pr__2E1BDC42">
+            <End Role="Produkt" EntitySet="Produkt" />
+            <End Role="HodowcaPL_Importer" EntitySet="HodowcaPL_Importer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Produkt__id_kate__2C3393D0" Association="Self.FK__Produkt__id_kate__2C3393D0">
+            <End Role="Kategoria" EntitySet="Kategoria" />
+            <End Role="Produkt" EntitySet="Produkt" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Zamowieni__id_kl__398D8EEE" Association="Self.FK__Zamowieni__id_kl__398D8EEE">
+            <End Role="Klienci" EntitySet="Klienci" />
+            <End Role="Zamowienia_Klient" EntitySet="Zamowienia_Klient" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Zamowieni__id_pr__36B12243" Association="Self.FK__Zamowieni__id_pr__36B12243">
+            <End Role="Produkt" EntitySet="Produkt" />
+            <End Role="Zamowienia" EntitySet="Zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Zamowieni__id_Sk__3C69FB99" Association="Self.FK__Zamowieni__id_Sk__3C69FB99">
+            <End Role="SklepyStacjonarne" EntitySet="SklepyStacjonarne" />
+            <End Role="Zamowienia_SklepStacjonarny" EntitySet="Zamowienia_SklepStacjonarny" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Zamowieni__id_za__38996AB5" Association="Self.FK__Zamowieni__id_za__38996AB5">
+            <End Role="Zamowienia" EntitySet="Zamowienia" />
+            <End Role="Zamowienia_Klient" EntitySet="Zamowienia_Klient" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Zamowieni__id_za__3B75D760" Association="Self.FK__Zamowieni__id_za__3B75D760">
+            <End Role="Zamowienia" EntitySet="Zamowienia" />
+            <End Role="Zamowienia_SklepStacjonarny" EntitySet="Zamowienia_SklepStacjonarny" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SkelpAkwarystycznyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="HodowcaPL">
+          <Key>
+            <PropertyRef Name="id_hodowcaPL" />
+          </Key>
+          <Property Name="id_hodowcaPL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imie" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nazwisko" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adres_email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="HodowcaPL_Importer" Relationship="Self.FK__HodowcaPL__id_ho__2F10007B" FromRole="HodowcaPL" ToRole="HodowcaPL_Importer" />
+        </EntityType>
+        <EntityType Name="Importer">
+          <Key>
+            <PropertyRef Name="id_importer" />
+          </Key>
+          <Property Name="id_importer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imie" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nazwisko" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adres_email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kraj" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="HodowcaPL_Importer" Relationship="Self.FK__HodowcaPL__id_im__300424B4" FromRole="Importer" ToRole="HodowcaPL_Importer" />
+        </EntityType>
+        <EntityType Name="Kategoria">
+          <Key>
+            <PropertyRef Name="id_kategoria" />
+          </Key>
+          <Property Name="id_kategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa_kategori" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Produkts" Relationship="Self.FK__Produkt__id_kate__2C3393D0" FromRole="Kategoria" ToRole="Produkt" />
+        </EntityType>
+        <EntityType Name="Klienci">
+          <Key>
+            <PropertyRef Name="id_klient" />
+          </Key>
+          <Property Name="id_klient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imie" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nazwisko" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adres_email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="kodpocztowy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="miejscowośc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="klient_staly" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Zamowienia_Klient" Relationship="Self.FK__Zamowieni__id_kl__398D8EEE" FromRole="Klienci" ToRole="Zamowienia_Klient" />
+        </EntityType>
+        <EntityType Name="Produkt">
+          <Key>
+            <PropertyRef Name="id_produktu" />
+          </Key>
+          <Property Name="id_produktu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa_produktu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cena_netto" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="cena_brutto" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="id_kategoria" Type="Int32" Nullable="false" />
+          <Property Name="dostepnych_sztuk" Type="Int32" />
+          <Property Name="dostepny" Type="Boolean" />
+          <NavigationProperty Name="Kategoria" Relationship="Self.FK__Produkt__id_kate__2C3393D0" FromRole="Produkt" ToRole="Kategoria" />
+          <NavigationProperty Name="HodowcaPL_Importer" Relationship="Self.FK__HodowcaPL__id_pr__2E1BDC42" FromRole="Produkt" ToRole="HodowcaPL_Importer" />
+          <NavigationProperty Name="Zamowienias" Relationship="Self.FK__Zamowieni__id_pr__36B12243" FromRole="Produkt" ToRole="Zamowienia" />
+        </EntityType>
+        <EntityType Name="SklepyStacjonarne">
+          <Key>
+            <PropertyRef Name="id_sklepu" />
+          </Key>
+          <Property Name="id_sklepu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa_sklepu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adres_email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="kodpocztowy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="miejscowość" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Zamowienia_SklepStacjonarny" Relationship="Self.FK__Zamowieni__id_Sk__3C69FB99" FromRole="SklepyStacjonarne" ToRole="Zamowienia_SklepStacjonarny" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zamowienia">
+          <Key>
+            <PropertyRef Name="id_zamowienia" />
+          </Key>
+          <Property Name="id_zamowienia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_produktu" Type="Int32" Nullable="false" />
+          <Property Name="sztuk" Type="Int32" Nullable="false" />
+          <Property Name="czy_odebrano" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Produkt" Relationship="Self.FK__Zamowieni__id_pr__36B12243" FromRole="Zamowienia" ToRole="Produkt" />
+          <NavigationProperty Name="Zamowienia_Klient" Relationship="Self.FK__Zamowieni__id_za__38996AB5" FromRole="Zamowienia" ToRole="Zamowienia_Klient" />
+          <NavigationProperty Name="Zamowienia_SklepStacjonarny" Relationship="Self.FK__Zamowieni__id_za__3B75D760" FromRole="Zamowienia" ToRole="Zamowienia_SklepStacjonarny" />
+        </EntityType>
+        <EntityType Name="HodowcaPL_Importer">
+          <Key>
+            <PropertyRef Name="id_produktu" />
+          </Key>
+          <Property Name="id_produktu" Type="Int32" Nullable="false" />
+          <Property Name="id_hodowcaPL" Type="Int32" />
+          <Property Name="id_importer" Type="Int32" />
+          <NavigationProperty Name="HodowcaPL" Relationship="Self.FK__HodowcaPL__id_ho__2F10007B" FromRole="HodowcaPL_Importer" ToRole="HodowcaPL" />
+          <NavigationProperty Name="Importer" Relationship="Self.FK__HodowcaPL__id_im__300424B4" FromRole="HodowcaPL_Importer" ToRole="Importer" />
+          <NavigationProperty Name="Produkt" Relationship="Self.FK__HodowcaPL__id_pr__2E1BDC42" FromRole="HodowcaPL_Importer" ToRole="Produkt" />
+        </EntityType>
+        <EntityType Name="Zamowienia_Klient">
+          <Key>
+            <PropertyRef Name="id_zamowienia" />
+            <PropertyRef Name="data_zlozenia_zamowienia" />
+            <PropertyRef Name="id_klient" />
+          </Key>
+          <Property Name="id_zamowienia" Type="Int32" Nullable="false" />
+          <Property Name="data_zlozenia_zamowienia" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id_klient" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Klienci" Relationship="Self.FK__Zamowieni__id_kl__398D8EEE" FromRole="Zamowienia_Klient" ToRole="Klienci" />
+          <NavigationProperty Name="Zamowienia" Relationship="Self.FK__Zamowieni__id_za__38996AB5" FromRole="Zamowienia_Klient" ToRole="Zamowienia" />
+        </EntityType>
+        <EntityType Name="Zamowienia_SklepStacjonarny">
+          <Key>
+            <PropertyRef Name="id_zamowienia" />
+            <PropertyRef Name="data_zlozenia_zamowienia" />
+            <PropertyRef Name="id_SklepStacjonarny" />
+          </Key>
+          <Property Name="id_zamowienia" Type="Int32" Nullable="false" />
+          <Property Name="data_zlozenia_zamowienia" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id_SklepStacjonarny" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SklepyStacjonarne" Relationship="Self.FK__Zamowieni__id_Sk__3C69FB99" FromRole="Zamowienia_SklepStacjonarny" ToRole="SklepyStacjonarne" />
+          <NavigationProperty Name="Zamowienia" Relationship="Self.FK__Zamowieni__id_za__3B75D760" FromRole="Zamowienia_SklepStacjonarny" ToRole="Zamowienia" />
+        </EntityType>
+        <Association Name="FK__HodowcaPL__id_ho__2F10007B">
+          <End Role="HodowcaPL" Type="Self.HodowcaPL" Multiplicity="0..1" />
+          <End Role="HodowcaPL_Importer" Type="Self.HodowcaPL_Importer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HodowcaPL">
+              <PropertyRef Name="id_hodowcaPL" />
+            </Principal>
+            <Dependent Role="HodowcaPL_Importer">
+              <PropertyRef Name="id_hodowcaPL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HodowcaPL__id_im__300424B4">
+          <End Role="Importer" Type="Self.Importer" Multiplicity="0..1" />
+          <End Role="HodowcaPL_Importer" Type="Self.HodowcaPL_Importer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Importer">
+              <PropertyRef Name="id_importer" />
+            </Principal>
+            <Dependent Role="HodowcaPL_Importer">
+              <PropertyRef Name="id_importer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Produkt__id_kate__2C3393D0">
+          <End Role="Kategoria" Type="Self.Kategoria" Multiplicity="1" />
+          <End Role="Produkt" Type="Self.Produkt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategoria">
+              <PropertyRef Name="id_kategoria" />
+            </Principal>
+            <Dependent Role="Produkt">
+              <PropertyRef Name="id_kategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Zamowieni__id_kl__398D8EEE">
+          <End Role="Klienci" Type="Self.Klienci" Multiplicity="1" />
+          <End Role="Zamowienia_Klient" Type="Self.Zamowienia_Klient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klienci">
+              <PropertyRef Name="id_klient" />
+            </Principal>
+            <Dependent Role="Zamowienia_Klient">
+              <PropertyRef Name="id_klient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HodowcaPL__id_pr__2E1BDC42">
+          <End Role="Produkt" Type="Self.Produkt" Multiplicity="1" />
+          <End Role="HodowcaPL_Importer" Type="Self.HodowcaPL_Importer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Produkt">
+              <PropertyRef Name="id_produktu" />
+            </Principal>
+            <Dependent Role="HodowcaPL_Importer">
+              <PropertyRef Name="id_produktu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Zamowieni__id_pr__36B12243">
+          <End Role="Produkt" Type="Self.Produkt" Multiplicity="1" />
+          <End Role="Zamowienia" Type="Self.Zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produkt">
+              <PropertyRef Name="id_produktu" />
+            </Principal>
+            <Dependent Role="Zamowienia">
+              <PropertyRef Name="id_produktu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Zamowieni__id_Sk__3C69FB99">
+          <End Role="SklepyStacjonarne" Type="Self.SklepyStacjonarne" Multiplicity="1" />
+          <End Role="Zamowienia_SklepStacjonarny" Type="Self.Zamowienia_SklepStacjonarny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SklepyStacjonarne">
+              <PropertyRef Name="id_sklepu" />
+            </Principal>
+            <Dependent Role="Zamowienia_SklepStacjonarny">
+              <PropertyRef Name="id_SklepStacjonarny" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Zamowieni__id_za__38996AB5">
+          <End Role="Zamowienia" Type="Self.Zamowienia" Multiplicity="1" />
+          <End Role="Zamowienia_Klient" Type="Self.Zamowienia_Klient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zamowienia">
+              <PropertyRef Name="id_zamowienia" />
+            </Principal>
+            <Dependent Role="Zamowienia_Klient">
+              <PropertyRef Name="id_zamowienia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Zamowieni__id_za__3B75D760">
+          <End Role="Zamowienia" Type="Self.Zamowienia" Multiplicity="1" />
+          <End Role="Zamowienia_SklepStacjonarny" Type="Self.Zamowienia_SklepStacjonarny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zamowienia">
+              <PropertyRef Name="id_zamowienia" />
+            </Principal>
+            <Dependent Role="Zamowienia_SklepStacjonarny">
+              <PropertyRef Name="id_zamowienia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SkelpAkwarystycznyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="HodowcaPLs" EntityType="Self.HodowcaPL" />
+          <EntitySet Name="Importers" EntityType="Self.Importer" />
+          <EntitySet Name="Kategorias" EntityType="Self.Kategoria" />
+          <EntitySet Name="Kliencis" EntityType="Self.Klienci" />
+          <EntitySet Name="Produkts" EntityType="Self.Produkt" />
+          <EntitySet Name="SklepyStacjonarnes" EntityType="Self.SklepyStacjonarne" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Zamowienias" EntityType="Self.Zamowienia" />
+          <EntitySet Name="HodowcaPL_Importer" EntityType="Self.HodowcaPL_Importer" />
+          <EntitySet Name="Zamowienia_Klient" EntityType="Self.Zamowienia_Klient" />
+          <EntitySet Name="Zamowienia_SklepStacjonarny" EntityType="Self.Zamowienia_SklepStacjonarny" />
+          <AssociationSet Name="FK__HodowcaPL__id_ho__2F10007B" Association="Self.FK__HodowcaPL__id_ho__2F10007B">
+            <End Role="HodowcaPL" EntitySet="HodowcaPLs" />
+            <End Role="HodowcaPL_Importer" EntitySet="HodowcaPL_Importer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HodowcaPL__id_im__300424B4" Association="Self.FK__HodowcaPL__id_im__300424B4">
+            <End Role="Importer" EntitySet="Importers" />
+            <End Role="HodowcaPL_Importer" EntitySet="HodowcaPL_Importer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Produkt__id_kate__2C3393D0" Association="Self.FK__Produkt__id_kate__2C3393D0">
+            <End Role="Kategoria" EntitySet="Kategorias" />
+            <End Role="Produkt" EntitySet="Produkts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Zamowieni__id_kl__398D8EEE" Association="Self.FK__Zamowieni__id_kl__398D8EEE">
+            <End Role="Klienci" EntitySet="Kliencis" />
+            <End Role="Zamowienia_Klient" EntitySet="Zamowienia_Klient" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HodowcaPL__id_pr__2E1BDC42" Association="Self.FK__HodowcaPL__id_pr__2E1BDC42">
+            <End Role="Produkt" EntitySet="Produkts" />
+            <End Role="HodowcaPL_Importer" EntitySet="HodowcaPL_Importer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Zamowieni__id_pr__36B12243" Association="Self.FK__Zamowieni__id_pr__36B12243">
+            <End Role="Produkt" EntitySet="Produkts" />
+            <End Role="Zamowienia" EntitySet="Zamowienias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Zamowieni__id_Sk__3C69FB99" Association="Self.FK__Zamowieni__id_Sk__3C69FB99">
+            <End Role="SklepyStacjonarne" EntitySet="SklepyStacjonarnes" />
+            <End Role="Zamowienia_SklepStacjonarny" EntitySet="Zamowienia_SklepStacjonarny" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Zamowieni__id_za__38996AB5" Association="Self.FK__Zamowieni__id_za__38996AB5">
+            <End Role="Zamowienia" EntitySet="Zamowienias" />
+            <End Role="Zamowienia_Klient" EntitySet="Zamowienia_Klient" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Zamowieni__id_za__3B75D760" Association="Self.FK__Zamowieni__id_za__3B75D760">
+            <End Role="Zamowienia" EntitySet="Zamowienias" />
+            <End Role="Zamowienia_SklepStacjonarny" EntitySet="Zamowienia_SklepStacjonarny" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SkelpAkwarystycznyModelStoreContainer" CdmEntityContainer="SkelpAkwarystycznyEntities">
+          <EntitySetMapping Name="HodowcaPLs">
+            <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.HodowcaPL">
+              <MappingFragment StoreEntitySet="HodowcaPL">
+                <ScalarProperty Name="id_hodowcaPL" ColumnName="id_hodowcaPL" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="adres_email" ColumnName="adres_email" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Importers">
+            <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Importer">
+              <MappingFragment StoreEntitySet="Importer">
+                <ScalarProperty Name="id_importer" ColumnName="id_importer" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="adres_email" ColumnName="adres_email" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="Kraj" ColumnName="Kraj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kategorias">
+            <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Kategoria">
+              <MappingFragment StoreEntitySet="Kategoria">
+                <ScalarProperty Name="id_kategoria" ColumnName="id_kategoria" />
+                <ScalarProperty Name="nazwa_kategori" ColumnName="nazwa_kategori" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kliencis">
+            <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Klienci">
+              <MappingFragment StoreEntitySet="Klienci">
+                <ScalarProperty Name="id_klient" ColumnName="id_klient" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="adres_email" ColumnName="adres_email" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="kodpocztowy" ColumnName="kodpocztowy" />
+                <ScalarProperty Name="miejscowośc" ColumnName="miejscowośc" />
+                <ScalarProperty Name="klient_staly" ColumnName="klient_staly" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Produkts">
+            <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Produkt">
+              <MappingFragment StoreEntitySet="Produkt">
+                <ScalarProperty Name="id_produktu" ColumnName="id_produktu" />
+                <ScalarProperty Name="nazwa_produktu" ColumnName="nazwa_produktu" />
+                <ScalarProperty Name="cena_netto" ColumnName="cena_netto" />
+                <ScalarProperty Name="cena_brutto" ColumnName="cena_brutto" />
+                <ScalarProperty Name="id_kategoria" ColumnName="id_kategoria" />
+                <ScalarProperty Name="dostepnych_sztuk" ColumnName="dostepnych_sztuk" />
+                <ScalarProperty Name="dostepny" ColumnName="dostepny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SklepyStacjonarnes">
+            <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.SklepyStacjonarne">
+              <MappingFragment StoreEntitySet="SklepyStacjonarne">
+                <ScalarProperty Name="id_sklepu" ColumnName="id_sklepu" />
+                <ScalarProperty Name="nazwa_sklepu" ColumnName="nazwa_sklepu" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="adres_email" ColumnName="adres_email" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="kodpocztowy" ColumnName="kodpocztowy" />
+                <ScalarProperty Name="miejscowość" ColumnName="miejscowość" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zamowienias">
+            <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Zamowienia">
+              <MappingFragment StoreEntitySet="Zamowienia">
+                <ScalarProperty Name="id_zamowienia" ColumnName="id_zamowienia" />
+                <ScalarProperty Name="id_produktu" ColumnName="id_produktu" />
+                <ScalarProperty Name="sztuk" ColumnName="sztuk" />
+                <ScalarProperty Name="czy_odebrano" ColumnName="czy_odebrano" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HodowcaPL_Importer">
+            <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.HodowcaPL_Importer">
+              <MappingFragment StoreEntitySet="HodowcaPL_Importer">
+                <ScalarProperty Name="id_produktu" ColumnName="id_produktu" />
+                <ScalarProperty Name="id_hodowcaPL" ColumnName="id_hodowcaPL" />
+                <ScalarProperty Name="id_importer" ColumnName="id_importer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zamowienia_Klient">
+            <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Zamowienia_Klient">
+              <MappingFragment StoreEntitySet="Zamowienia_Klient">
+                <ScalarProperty Name="id_zamowienia" ColumnName="id_zamowienia" />
+                <ScalarProperty Name="data_zlozenia_zamowienia" ColumnName="data_zlozenia_zamowienia" />
+                <ScalarProperty Name="id_klient" ColumnName="id_klient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zamowienia_SklepStacjonarny">
+            <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Zamowienia_SklepStacjonarny">
+              <MappingFragment StoreEntitySet="Zamowienia_SklepStacjonarny">
+                <ScalarProperty Name="id_zamowienia" ColumnName="id_zamowienia" />
+                <ScalarProperty Name="data_zlozenia_zamowienia" ColumnName="data_zlozenia_zamowienia" />
+                <ScalarProperty Name="id_SklepStacjonarny" ColumnName="id_SklepStacjonarny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

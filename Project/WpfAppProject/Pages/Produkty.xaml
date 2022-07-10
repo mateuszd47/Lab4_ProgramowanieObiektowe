@@ -7,9 +7,184 @@
       mc:Ignorable="d" 
       d:DesignHeight="706" d:DesignWidth="1206"
       Title="Produkty">
+    <Grid Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
 
-    <Grid>
-        <TextBlock Text="dsasdaads" Background="Red"/>
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Nazwa Produktu" 
+                Margin="10 20 0 0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left">
+            </Label>
+            <TextBox
+                FontWeight="Bold"
+                Width="90" 
+                Height="20" 
+                Margin="130 20 0 0" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left" 
+                x:Name="nazwaProduktu"/>
+
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="ID Kategoria" 
+                Margin="10,50,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left">
+            </Label>
+            <TextBox 
+                FontWeight="Bold"
+                Width="90"
+                Height="20" 
+                Margin="130,50,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                x:Name="IDkategoria"
+                MaxLength="1"/>
+
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Cenna Netto" 
+                Margin="10,80,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" >
+            </Label>
+            <TextBox 
+                FontWeight="Bold"
+                Width="90" 
+                Height="20" 
+                Margin="130,80,0,0" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left" 
+                x:Name="cennaNetto"/>
+
+            <Label 
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Cena Brutto" 
+                Margin="10,110,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" >
+            </Label>
+            <TextBox
+                FontWeight="Bold"
+                Width="90" 
+                Height="20" 
+                Margin="130,110,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                x:Name="cennaBrutto"/>
+
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Ilosc" 
+                Margin="10,140,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" >
+            </Label>
+            <TextBox
+                FontWeight="Bold"
+                Width="90" 
+                Height="20" 
+                Margin="130,140,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                x:Name="ilosc"/>
+
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Dostepnosc" 
+                Margin="10,170,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" >
+            </Label>
+            <TextBox
+                FontWeight="Bold"
+                Width="90" 
+                Height="20" 
+                Margin="130,170,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                x:Name="dostepnosc"/>
+
+
+
+
+            <Button 
+                Click="Button_Click" 
+                Content="Wyslij" 
+                Foreground="White"
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Right" 
+                Margin="0 0 10 10">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#462AD8"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" 
+                                Height="40"
+                                CornerRadius="5"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button 
+                Click="Button_Click_Refresh" 
+                Content="Refresh" 
+                Foreground="White"
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Left"
+                Margin="10 0 0 10">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#462AD8"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" 
+                                Height="40"
+                                CornerRadius="5"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+        <Grid Grid.Column="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <DataGrid x:Name="ProduktTab"/>
+            </ScrollViewer>
+        </Grid>
+
 
     </Grid>
 </Page>

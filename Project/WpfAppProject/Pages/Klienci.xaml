@@ -8,7 +8,30 @@
       d:DesignHeight="706" d:DesignWidth="1206"
       Title="Klienci">
 
-    <Grid >
-        <TextBlock Text="dsasdaads" Background="Red"/>
+    <Grid Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Label Content="Nazwa Produktu" Margin="10 0 0 0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            </Label>
+            <TextBox Width="90" Height="20" Margin="130 5 0 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Kategoria" Margin="10,42,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            </Label>
+            <TextBox Width="90" Height="20" Margin="130,42,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Cenna Netto" Margin="10,78,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            </Label>
+            <TextBox Width="90" Height="20" Margin="130,118,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Cena Brutto" Margin="10,118,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            </Label>
+            <TextBox Width="90" Height="20" Margin="130,81,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        </Grid>
+        <Grid Grid.Column="1">
+
+            <TextBlock Background="White" Text="Tabelka"/>
+        </Grid>
+
+
     </Grid>
 </Page>

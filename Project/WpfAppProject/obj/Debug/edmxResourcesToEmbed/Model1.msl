@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SkelpAkwarystycznyModelStoreContainer" CdmEntityContainer="SkelpAkwarystycznyEntities">
+    <EntitySetMapping Name="HodowcaPLs">
+      <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.HodowcaPL">
+        <MappingFragment StoreEntitySet="HodowcaPL">
+          <ScalarProperty Name="id_hodowcaPL" ColumnName="id_hodowcaPL" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="adres_email" ColumnName="adres_email" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Importers">
+      <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Importer">
+        <MappingFragment StoreEntitySet="Importer">
+          <ScalarProperty Name="id_importer" ColumnName="id_importer" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="adres_email" ColumnName="adres_email" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="Kraj" ColumnName="Kraj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategorias">
+      <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Kategoria">
+        <MappingFragment StoreEntitySet="Kategoria">
+          <ScalarProperty Name="id_kategoria" ColumnName="id_kategoria" />
+          <ScalarProperty Name="nazwa_kategori" ColumnName="nazwa_kategori" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kliencis">
+      <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Klienci">
+        <MappingFragment StoreEntitySet="Klienci">
+          <ScalarProperty Name="id_klient" ColumnName="id_klient" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="adres_email" ColumnName="adres_email" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="kodpocztowy" ColumnName="kodpocztowy" />
+          <ScalarProperty Name="miejscowośc" ColumnName="miejscowośc" />
+          <ScalarProperty Name="klient_staly" ColumnName="klient_staly" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produkts">
+      <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Produkt">
+        <MappingFragment StoreEntitySet="Produkt">
+          <ScalarProperty Name="id_produktu" ColumnName="id_produktu" />
+          <ScalarProperty Name="nazwa_produktu" ColumnName="nazwa_produktu" />
+          <ScalarProperty Name="cena_netto" ColumnName="cena_netto" />
+          <ScalarProperty Name="cena_brutto" ColumnName="cena_brutto" />
+          <ScalarProperty Name="id_kategoria" ColumnName="id_kategoria" />
+          <ScalarProperty Name="dostepnych_sztuk" ColumnName="dostepnych_sztuk" />
+          <ScalarProperty Name="dostepny" ColumnName="dostepny" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SklepyStacjonarnes">
+      <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.SklepyStacjonarne">
+        <MappingFragment StoreEntitySet="SklepyStacjonarne">
+          <ScalarProperty Name="id_sklepu" ColumnName="id_sklepu" />
+          <ScalarProperty Name="nazwa_sklepu" ColumnName="nazwa_sklepu" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="adres_email" ColumnName="adres_email" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="kodpocztowy" ColumnName="kodpocztowy" />
+          <ScalarProperty Name="miejscowość" ColumnName="miejscowość" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zamowienias">
+      <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Zamowienia">
+        <MappingFragment StoreEntitySet="Zamowienia">
+          <ScalarProperty Name="id_zamowienia" ColumnName="id_zamowienia" />
+          <ScalarProperty Name="id_produktu" ColumnName="id_produktu" />
+          <ScalarProperty Name="sztuk" ColumnName="sztuk" />
+          <ScalarProperty Name="czy_odebrano" ColumnName="czy_odebrano" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HodowcaPL_Importer">
+      <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.HodowcaPL_Importer">
+        <MappingFragment StoreEntitySet="HodowcaPL_Importer">
+          <ScalarProperty Name="id_produktu" ColumnName="id_produktu" />
+          <ScalarProperty Name="id_hodowcaPL" ColumnName="id_hodowcaPL" />
+          <ScalarProperty Name="id_importer" ColumnName="id_importer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zamowienia_Klient">
+      <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Zamowienia_Klient">
+        <MappingFragment StoreEntitySet="Zamowienia_Klient">
+          <ScalarProperty Name="id_zamowienia" ColumnName="id_zamowienia" />
+          <ScalarProperty Name="data_zlozenia_zamowienia" ColumnName="data_zlozenia_zamowienia" />
+          <ScalarProperty Name="id_klient" ColumnName="id_klient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zamowienia_SklepStacjonarny">
+      <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.Zamowienia_SklepStacjonarny">
+        <MappingFragment StoreEntitySet="Zamowienia_SklepStacjonarny">
+          <ScalarProperty Name="id_zamowienia" ColumnName="id_zamowienia" />
+          <ScalarProperty Name="data_zlozenia_zamowienia" ColumnName="data_zlozenia_zamowienia" />
+          <ScalarProperty Name="id_SklepStacjonarny" ColumnName="id_SklepStacjonarny" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

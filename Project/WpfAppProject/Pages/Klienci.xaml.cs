@@ -23,6 +23,7 @@ namespace WpfAppProject.Pages
         public Klienci()
         {
             InitializeComponent();
+
         }
     }
 }
