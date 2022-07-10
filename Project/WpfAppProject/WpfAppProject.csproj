@@ -184,10 +184,15 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\App.datasource" />
+    <None Include="Properties\DataSources\HodowcaPL.datasource" />
+    <None Include="Properties\DataSources\HodowcaPL_Importer.datasource" />
+    <None Include="Properties\DataSources\Importer.datasource" />
     <None Include="Properties\DataSources\Kategoria.datasource" />
     <None Include="Properties\DataSources\Klienci.datasource" />
     <None Include="Properties\DataSources\MainWindow.datasource" />
+    <None Include="Properties\DataSources\Produkt.datasource" />
     <None Include="Properties\DataSources\SkelpAkwarystycznyEntities.datasource" />
+    <None Include="Properties\DataSources\SklepyStacjonarne.datasource" />
     <None Include="Properties\DataSources\User.datasource" />
     <None Include="Properties\DataSources\WpfAppProject.Pages.Klienci.datasource" />
     <None Include="Properties\DataSources\WpfAppProject.Pages.Produkty.datasource" />
@@ -195,6 +200,9 @@
     <None Include="Properties\DataSources\WpfAppProject.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\WpfAppProject.Properties.Settings.datasource" />
     <None Include="Properties\DataSources\WpfAppProject.View.LoginView.datasource" />
+    <None Include="Properties\DataSources\Zamowienia.datasource" />
+    <None Include="Properties\DataSources\Zamowienia_Klient.datasource" />
+    <None Include="Properties\DataSources\Zamowienia_SklepStacjonarny.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -209,9 +217,7 @@
   <ItemGroup>
     <Resource Include="Images\LOGO.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

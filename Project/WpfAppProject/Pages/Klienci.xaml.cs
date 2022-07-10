@@ -20,9 +20,50 @@ namespace WpfAppProject.Pages
     /// </summary>
     public partial class Klienci : Page
     {
+        /// <summary>Initializes a new instance of the <see cref="Klienci" /> class.</summary>
         public Klienci()
         {
             InitializeComponent();
+
+            SkelpAkwarystycznyEntities db = new SkelpAkwarystycznyEntities();
+            var conDB = from a in db.Kliencis
+                        select new
+                        {
+                            a.imie,
+                            a.nazwisko,
+                            a.telefon,
+                            a.adres_email,
+                            a.kodpocztowy,
+                            a.miejscowośc,
+                            a.klient_staly,
+                        };
+            this.KlienciTab.ItemsSource = conDB.ToList();
+
+        }
+
+
+        /// <summary>Handles the Refresh event of the Button_Click control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void Button_Click_Refresh(object sender, RoutedEventArgs e)
+        {
+            SkelpAkwarystycznyEntities db = new SkelpAkwarystycznyEntities();
+            var conDB = from a in db.Kliencis
+                        select new
+                        {
+                            a.imie,
+                            a.nazwisko,
+                            a.telefon,
+                            a.adres_email,
+                            a.kodpocztowy,
+                            a.miejscowośc,
+                            a.klient_staly,
+                        };
+            this.KlienciTab.ItemsSource = conDB.ToList();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

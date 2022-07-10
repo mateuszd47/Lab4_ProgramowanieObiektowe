@@ -8,8 +8,135 @@
       d:DesignHeight="706" d:DesignWidth="1206"
       Title="Zamowienia">
 
-    <Grid>
-        <TextBlock Text="dsasdaads" Background="Red"/>
+    <Grid Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="ID Zamowienia" 
+                Margin="10 20 0 0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left">
+            </Label>
+            <TextBox
+                FontWeight="Bold"
+                Width="90" 
+                Height="20" 
+                Margin="130 20 0 0" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left" 
+                x:Name="idZamowienia"/>
+
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Ilosc" 
+                Margin="10,50,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left">
+            </Label>
+            <TextBox 
+                FontWeight="Bold"
+                Width="90"
+                Height="20" 
+                Margin="130,50,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                x:Name="ilosc"
+                />
+
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Odebrano 0/1" 
+                Margin="10,80,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left">
+            </Label>
+            <TextBox 
+                FontWeight="Bold"
+                Width="90" 
+                Height="20" 
+                Margin="130,80,0,0" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left" 
+                x:Name="odebior"/>
+
+
+
+
+
+
+            <Button
+                Click="Button_Click"
+                Content="Wyslij" 
+                Foreground="White"
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Right" 
+                Margin="0 0 10 10">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#462AD8"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" 
+                                Height="40"
+                                CornerRadius="5"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button 
+                Click="Button_Click_Refresh" 
+                Content="Refresh" 
+                Foreground="White"
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Left"
+                Margin="10 0 0 10">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#462AD8"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" 
+                                Height="40"
+                                CornerRadius="5"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+        <Grid Grid.Column="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <DataGrid x:Name="ZamowieniaTab"/>
+            </ScrollViewer>
+        </Grid>
+
 
     </Grid>
 </Page>

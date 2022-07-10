@@ -10,26 +10,198 @@
 
     <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
-            <Label Content="Nazwa Produktu" Margin="10 0 0 0" VerticalAlignment="Top" HorizontalAlignment="Left">
+
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Imie" 
+                Margin="10 20 0 0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left">
             </Label>
-            <TextBox Width="90" Height="20" Margin="130 5 0 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Label Content="Kategoria" Margin="10,42,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <TextBox
+                FontWeight="Bold"
+                Width="90" 
+                Height="20" 
+                Margin="130 20 0 0" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left" 
+                x:Name="imie"/>
+
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Nazwisko" 
+                Margin="10,50,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left">
             </Label>
-            <TextBox Width="90" Height="20" Margin="130,42,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Label Content="Cenna Netto" Margin="10,78,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <TextBox 
+                FontWeight="Bold"
+                Width="90"
+                Height="20" 
+                Margin="130,50,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                x:Name="nazwsiko"
+                />
+
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Telefon" 
+                Margin="10,80,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left">
             </Label>
-            <TextBox Width="90" Height="20" Margin="130,118,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Label Content="Cena Brutto" Margin="10,118,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <TextBox 
+                FontWeight="Bold"
+                Width="90" 
+                Height="20" 
+                Margin="130,80,0,0" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left" 
+                x:Name="telefon"
+                MaxLength="9"/>
+
+            <Label 
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Adres Email" 
+                Margin="10,110,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" >
             </Label>
-            <TextBox Width="90" Height="20" Margin="130,81,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBox
+                FontWeight="Bold"
+                Width="90" 
+                Height="20" 
+                Margin="130,110,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                x:Name="adrese"/>
+
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Kod-Pocztowy" 
+                Margin="10,140,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" >
+            </Label>
+            <TextBox
+                FontWeight="Bold"
+                Width="90" 
+                Height="20" 
+                Margin="130,140,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                x:Name="kodPoczatowy"/>
+
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Miejscowosc" 
+                Margin="10,170,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" >
+            </Label>
+            <TextBox
+                FontWeight="Bold"
+                Width="90" 
+                Height="20" 
+                Margin="130,170,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                x:Name="miejscowosc"/>
+            
+            <Label
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Staly Klient" 
+                Margin="10,170,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" >
+            </Label>
+            <TextBox
+                FontWeight="Bold"
+                Width="90" 
+                Height="20" 
+                Margin="130,170,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                x:Name="stalyKlient"/>
+
+
+
+
+            <Button
+                Click="Button_Click"
+                Content="Wyslij" 
+                Foreground="White"
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Right" 
+                Margin="0 0 10 10">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#462AD8"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" 
+                                Height="40"
+                                CornerRadius="5"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button 
+                Click="Button_Click_Refresh" 
+                Content="Refresh" 
+                Foreground="White"
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Left"
+                Margin="10 0 0 10">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#462AD8"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" 
+                                Height="40"
+                                CornerRadius="5"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </Grid>
         <Grid Grid.Column="1">
-
-            <TextBlock Background="White" Text="Tabelka"/>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <DataGrid x:Name="KlienciTab"/>
+            </ScrollViewer>
         </Grid>
 
 

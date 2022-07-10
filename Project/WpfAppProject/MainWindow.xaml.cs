@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfAppProject.Pages;
 using WpfAppProject.View;
 
 namespace WpfAppProject
@@ -22,11 +21,15 @@ namespace WpfAppProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>Initializes a new instance of the <see cref="MainWindow" /> class.</summary>
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>Handles the MouseDown event of the Border control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs" /> instance containing the event data.</param>
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if(e.ChangedButton == MouseButton.Left)
@@ -35,16 +38,25 @@ namespace WpfAppProject
             }
         }
 
+        /// <summary>Handles the Click event of the BtnClose control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
+        /// <summary>Handles the Click event of the BtnMinimize control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void BtnMinimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
 
+        /// <summary>Handles the Click event of the BtnLogOut control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void BtnLogOut_Click(object sender, RoutedEventArgs e)
         {
             LoginView LoginPage = new LoginView();
@@ -52,20 +64,29 @@ namespace WpfAppProject
             this.Close();
         }
 
+        /// <summary>Handles the Click event of the BtnKlienci control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void BtnKlienci_Click(object sender, RoutedEventArgs e)
         {
-            MainPages.Content = new Klienci();
+            MainPages.Content = new Pages.Klienci();
         }
 
+        /// <summary>Handles the Click event of the BtnZamowienia control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void BtnZamowienia_Click(object sender, RoutedEventArgs e)
         {
-            MainPages.Content = new Zamowienia();
+            MainPages.Content = new Pages.Zamowienia();
 
         }
 
+        /// <summary>Handles the Click event of the BtnProdukty control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void BtnProdukty_Click(object sender, RoutedEventArgs e)
         {
-            MainPages.Content = new Produkty();
+            MainPages.Content = new Pages.Produkty();
 
         }
     }
