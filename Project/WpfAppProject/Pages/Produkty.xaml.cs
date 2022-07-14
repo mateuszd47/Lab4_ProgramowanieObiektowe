@@ -20,17 +20,27 @@ namespace WpfAppProject.Pages
     /// <summary>
     /// Logika interakcji dla klasy Produkty.xaml
     /// </summary>
+    /// <seealso cref="System.Windows.Controls.Page" />
+    /// <seealso cref="System.Windows.Markup.IComponentConnector" />
     public partial class Produkty : Page
     {
-        /// <summary>Initializes a new instance of the <see cref="Produkty" /> class.</summary>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Produkty" /> class.
+        /// </summary>
         public Produkty()
         {   
             InitializeComponent();
             LoadGrid();
         }
 
+        /// <summary>
+        /// The con
+        /// </summary>
         SqlConnection con = new SqlConnection(@"Data Source=MATEUSZ;Initial Catalog=SkelpAkwarystyczny;Integrated Security=True");
 
+        /// <summary>
+        /// Loads the grid.
+        /// </summary>
         public void LoadGrid()
         {
             SqlCommand cmd = new SqlCommand("select * from Produkt", con);
@@ -42,6 +52,9 @@ namespace WpfAppProject.Pages
             ProduktTab.ItemsSource = dt.DefaultView;
         }
 
+        /// <summary>
+        /// Clears the data.
+        /// </summary>
         public void ClearData()
         {
             nazwaProduktu.Clear();
@@ -51,6 +64,10 @@ namespace WpfAppProject.Pages
             idProdukt.Clear();
         }
 
+        /// <summary>
+        /// Validations this instance.
+        /// </summary>
+        /// <returns></returns>
         private bool Validation()
         {
             if(nazwaProduktu.Text == "" || nazwaProduktu.Text == null)
@@ -65,6 +82,11 @@ namespace WpfAppProject.Pages
             return true;
         }
 
+        /// <summary>
+        /// Handles the Click event of the Button control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -101,6 +123,11 @@ namespace WpfAppProject.Pages
 
         }
 
+        /// <summary>
+        /// Handles the Delete event of the Button_Click control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
             con.Open();
@@ -124,21 +151,24 @@ namespace WpfAppProject.Pages
             }
         }
 
+        /// <summary>
+        /// Handles the Update event of the Button_Click control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void Button_Click_Update(object sender, RoutedEventArgs e)
         {
             decimal cenaBrutto = decimal.Parse(cennaNetto.Text) * (decimal)1.27;
-            bool dos = false;
+            int dos = 0;
             if (decimal.Parse(ilosc.Text) > 0)
-                dos = true;
+                dos = 1;
             con.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Produkt set " +
-                "nazwa_produktu = " + nazwaProduktu.Text +
-                ", id_kategoria = " + IDkategoria.Text +
-                ", cena_netto = " + cennaNetto.Text +
-                ", cena_brutto = " + cenaBrutto +
-                ", dostepnych_sztuk = " + ilosc.Text +
-                ", dostepny = " + dos + "" +
-                idProdukt.Text+"", con);
+            int K= int.Parse(IDkategoria.Text);
+            decimal CN= decimal.Parse(cennaNetto.Text);
+            int I = int.Parse(ilosc.Text);
+           
+            int IDP = int.Parse(idProdukt.Text);
+            SqlCommand cmd = new SqlCommand("UPDATE Produkt set nazwa_produktu = '" + nazwaProduktu.Text +"', id_kategoria = " + K +", cena_netto = " + CN +", cena_brutto = " + cenaBrutto +", dostepnych_sztuk = " + I +", dostepny = " + dos + " WHERE id_produktu = " + IDP + " ", con);
             try
             {
                 cmd.ExecuteNonQuery();
@@ -150,7 +180,7 @@ namespace WpfAppProject.Pages
             }
             finally
             {
-                con?.Close();
+                con.Close();
                 ClearData();
                 LoadGrid();
             }

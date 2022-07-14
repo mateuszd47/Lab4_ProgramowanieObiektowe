@@ -19,15 +19,21 @@ namespace WpfAppProject.View
     /// <summary>
     /// Logika interakcji dla klasy LoginView.xaml
     /// </summary>
+    /// <seealso cref="System.Windows.Window" />
+    /// <seealso cref="System.Windows.Markup.IComponentConnector" />
     public partial class LoginView : Window
     {
-        /// <summary>Initializes a new instance of the <see cref="LoginView" /> class.</summary>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LoginView" /> class.
+        /// </summary>
         public LoginView()
         {
             InitializeComponent();
         }
 
-        /// <summary>Handles the MouseDown event of the Window control.</summary>
+        /// <summary>
+        /// Handles the MouseDown event of the Window control.
+        /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs" /> instance containing the event data.</param>
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -38,7 +44,9 @@ namespace WpfAppProject.View
             }
         }
 
-        /// <summary>Handles the Click event of the BtnClose control.</summary>
+        /// <summary>
+        /// Handles the Click event of the BtnClose control.
+        /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void BtnClose_Click(object sender, RoutedEventArgs e)
@@ -46,7 +54,9 @@ namespace WpfAppProject.View
             Application.Current.Shutdown();
         }
 
-        /// <summary>Handles the Click event of the BtnMinimize control.</summary>
+        /// <summary>
+        /// Handles the Click event of the BtnMinimize control.
+        /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void BtnMinimize_Click(object sender, RoutedEventArgs e)
@@ -54,7 +64,9 @@ namespace WpfAppProject.View
             WindowState = WindowState.Minimized;
         }
 
-        /// <summary>Handles the Click event of the BtnLogin control.</summary>
+        /// <summary>
+        /// Handles the Click event of the BtnLogin control.
+        /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
