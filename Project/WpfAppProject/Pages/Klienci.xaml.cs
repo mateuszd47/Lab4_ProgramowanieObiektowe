@@ -25,7 +25,7 @@ namespace WpfAppProject.Pages
         {
             InitializeComponent();
 
-            SkelpAkwarystycznyEntities db = new SkelpAkwarystycznyEntities();
+            SkelpAkwarystycznyEntities1 db = new SkelpAkwarystycznyEntities1();
             var conDB = from a in db.Kliencis
                         select new
                         {
@@ -47,7 +47,7 @@ namespace WpfAppProject.Pages
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void Button_Click_Refresh(object sender, RoutedEventArgs e)
         {
-            SkelpAkwarystycznyEntities db = new SkelpAkwarystycznyEntities();
+            SkelpAkwarystycznyEntities1 db = new SkelpAkwarystycznyEntities1();
             var conDB = from a in db.Kliencis
                         select new
                         {
@@ -62,9 +62,39 @@ namespace WpfAppProject.Pages
             this.KlienciTab.ItemsSource = conDB.ToList();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /*private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (nazwaProduktu.Text == "" || IDkategoria.Text == "" || cennaNetto.Text == "" || cennaBrutto.Text == "" || ilosc.Text == "")
+            {
+                MessageBox.Show("Empty Data");
+            }
+            else
+            {
+                MessageBox.Show("Dziala do if");
+                if (int.TryParse(IDkategoria.Text, out int idK))
+                {
+                    if (idK > 0 && idK <= 9)
+                    {
+                        int cN = Int32.Parse(cennaNetto.Text);
+                        int cB = Int32.Parse(cennaBrutto.Text);
+                        int DS = Int32.Parse(ilosc.Text);
+                        SkelpAkwarystycznyEntities db = new SkelpAkwarystycznyEntities();
+                        Produkt produkty = new Produkt()
+                        {
+                            nazwa_produktu = nazwaProduktu.Text,
+                            id_kategoria = idK,
+                            cena_netto = cN,
+                            cena_brutto = cB,
+                            dostepnych_sztuk = DS,
+                        };
 
-        }
+                        db.Produkts.Add(produkty);
+                        db.SaveChanges();
+                        MessageBox.Show("Dziala");
+                    }
+                }
+            }
+
+        }*/
     }
 }

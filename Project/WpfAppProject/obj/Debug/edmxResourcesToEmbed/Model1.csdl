@@ -239,7 +239,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="SkelpAkwarystycznyEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="SkelpAkwarystycznyEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="HodowcaPLs" EntityType="Self.HodowcaPL" />
     <EntitySet Name="Importers" EntityType="Self.Importer" />
     <EntitySet Name="Kategorias" EntityType="Self.Kategoria" />

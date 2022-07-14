@@ -26,16 +26,6 @@ namespace WpfAppProject.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MATEUSZ;Initial Catalog=SklepAkwarystyczny;Integrated Security=True")]
-        public string MATEUSZ {
-            get {
-                return ((string)(this["MATEUSZ"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MATEUSZ;Initial Catalog=SkelpAkwarystyczny;Integrated Security=True")]
         public string SkelpAkwarystycznyConnectionString {
             get {

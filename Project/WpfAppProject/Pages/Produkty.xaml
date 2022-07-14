@@ -66,10 +66,10 @@
                 HorizontalAlignment="Left" 
                 x:Name="cennaNetto"/>
 
-            <Label 
+            <Label
                 Foreground="White"
                 FontWeight="Bold"
-                Content="Cena Brutto" 
+                Content="Ilosc" 
                 Margin="10,110,0,0" 
                 VerticalAlignment="Top" 
                 HorizontalAlignment="Left" >
@@ -81,52 +81,33 @@
                 Margin="130,110,0,0" 
                 VerticalAlignment="Top" 
                 HorizontalAlignment="Left" 
-                x:Name="cennaBrutto"/>
-
-            <Label
-                Foreground="White"
-                FontWeight="Bold"
-                Content="Ilosc" 
-                Margin="10,140,0,0" 
-                VerticalAlignment="Top" 
-                HorizontalAlignment="Left" >
-            </Label>
-            <TextBox
-                FontWeight="Bold"
-                Width="90" 
-                Height="20" 
-                Margin="130,140,0,0" 
-                VerticalAlignment="Top" 
-                HorizontalAlignment="Left" 
                 x:Name="ilosc"/>
 
             <Label
                 Foreground="White"
                 FontWeight="Bold"
-                Content="Dostepnosc" 
-                Margin="10,170,0,0" 
+                Content="ID Produktu" 
+                Margin="216,563,0,0" 
                 VerticalAlignment="Top" 
-                HorizontalAlignment="Left" >
+                HorizontalAlignment="Left" 
+                RenderTransformOrigin="7.558,15.37" >
             </Label>
             <TextBox
                 FontWeight="Bold"
                 Width="90" 
                 Height="20" 
-                Margin="130,170,0,0" 
+                Margin="300,566,0,0" 
                 VerticalAlignment="Top" 
                 HorizontalAlignment="Left" 
-                x:Name="dostepnosc"/>
-
-
-
+                x:Name="idProdukt"/>
 
             <Button 
-                Click="Button_Click" 
-                Content="Wyslij" 
+                Click="Button_Click_Update"
+                Content="Update" 
                 Foreground="White"
                 VerticalAlignment="Bottom" 
                 HorizontalAlignment="Right" 
-                Margin="0 0 10 10">
+                Margin="0 0 240 60">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#462AD8"/>
@@ -149,16 +130,47 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+
             <Button 
-                Click="Button_Click_Refresh" 
-                Content="Refresh" 
+                Click="Button_Click_Delete"
+                Content="Delete" 
                 Foreground="White"
                 VerticalAlignment="Bottom" 
-                HorizontalAlignment="Left"
-                Margin="10 0 0 10">
+                HorizontalAlignment="Right" 
+                Margin="0 0 10 60">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#462AD8"/>
+                        <Setter Property="Background" Value="#FFD8322A"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" 
+                                Height="40"
+                                CornerRadius="5"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button 
+                Click="Button_Click" 
+                Content="Send" 
+                Foreground="White"
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Right" 
+                Margin="0 0 10 10">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF2AD87C"/>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="#28AEED"/>

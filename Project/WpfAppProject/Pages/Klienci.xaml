@@ -140,7 +140,6 @@
 
 
             <Button
-                Click="Button_Click"
                 Content="Wyslij" 
                 Foreground="White"
                 VerticalAlignment="Bottom" 

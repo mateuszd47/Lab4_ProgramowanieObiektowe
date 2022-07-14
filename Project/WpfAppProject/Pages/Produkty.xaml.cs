@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,81 +26,134 @@ namespace WpfAppProject.Pages
         public Produkty()
         {   
             InitializeComponent();
-
-            SkelpAkwarystycznyEntities db = new SkelpAkwarystycznyEntities();
-            var conDB = from a in db.Produkts
-                        join b in db.Kategorias
-                        on a.id_kategoria equals b.id_kategoria
-                        select new
-                        {
-                            a.nazwa_produktu,
-                            b.nazwa_kategori,
-                            a.cena_netto,
-                            a.cena_brutto,
-                            a.dostepnych_sztuk,
-                            a.dostepny,
-                        };
-            this.ProduktTab.ItemsSource = conDB.ToList();
+            LoadGrid();
         }
 
-        /// <summary>Handles the Click event of the Button control.</summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        SqlConnection con = new SqlConnection(@"Data Source=MATEUSZ;Initial Catalog=SkelpAkwarystyczny;Integrated Security=True");
+
+        public void LoadGrid()
+        {
+            SqlCommand cmd = new SqlCommand("select * from Produkt", con);
+            DataTable dt = new DataTable();
+            con.Open();
+            SqlDataReader sdr = cmd.ExecuteReader();
+            dt.Load(sdr);
+            con.Close();
+            ProduktTab.ItemsSource = dt.DefaultView;
+        }
+
+        public void ClearData()
+        {
+            nazwaProduktu.Clear();
+            IDkategoria.Clear();
+            cennaNetto.Clear();
+            ilosc.Clear();
+            idProdukt.Clear();
+        }
+
+        private bool Validation()
+        {
+            if(nazwaProduktu.Text == "" || nazwaProduktu.Text == null)
+                return false;
+            if (IDkategoria.Text == "" || IDkategoria.Text == null)
+                return false;
+            if (cennaNetto.Text == "" || cennaNetto.Text == null)
+                return false;
+            if (ilosc.Text == "" || ilosc.Text == null)
+                return false;
+
+            return true;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            if (nazwaProduktu.Text == "" || IDkategoria.Text == "" || cennaNetto.Text == "" || cennaBrutto.Text == "" || ilosc.Text == "")
+            if (!Validation())
             {
-                MessageBox.Show("Empty Data");
+                MessageBox.Show("Puste pola danych / {Id}");
             }
             else
             {
-                MessageBox.Show("Dziala do if");
-                if (int.TryParse(IDkategoria.Text, out int idK))
+                bool Dost()
                 {
-                    if (idK > 0 && idK <= 9)
-                    {
-                        int cN = Int32.Parse(cennaNetto.Text);
-                        int cB = Int32.Parse(cennaBrutto.Text);
-                        int DS = Int32.Parse(ilosc.Text);
-                        SkelpAkwarystycznyEntities db = new SkelpAkwarystycznyEntities();
-                        Produkt produkty = new Produkt()
-                        {
-                            nazwa_produktu = nazwaProduktu.Text,
-                            id_kategoria = idK,
-                            cena_netto = cN,
-                            cena_brutto = cB,
-                            dostepnych_sztuk = DS,
-                        };
-
-                        db.Produkts.Add(produkty);
-                        db.SaveChanges();
-                        MessageBox.Show("Dziala");
-                    }
+                    decimal i = decimal.Parse(ilosc.Text);
+                    if (i > 0)
+                        return true;
+                    return false;
                 }
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO Produkt VALUES(@nazwa_produktu, @cena_netto, @cena_brutto, @id_kategoria, @dostepnych_sztuk, @dostepny)", con);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@nazwa_produktu", nazwaProduktu.Text);
+                cmd.Parameters.AddWithValue("@cena_netto", cennaNetto.Text);
+                decimal cenaBrutto = decimal.Parse(cennaNetto.Text) * (decimal)1.27;
+                cmd.Parameters.AddWithValue("@cena_brutto", cenaBrutto);
+                cmd.Parameters.AddWithValue("@id_kategoria", IDkategoria.Text);
+                cmd.Parameters.AddWithValue("@dostepnych_sztuk", ilosc.Text);
+                cmd.Parameters.AddWithValue("@dostepny", Dost());
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                LoadGrid();
+                MessageBox.Show("Udało sie wysłać");
+                ClearData();
             }
 
         }
 
-        /// <summary>Handles the Refresh event of the Button_Click control.</summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
-        private void Button_Click_Refresh(object sender, RoutedEventArgs e)
+        private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
-            SkelpAkwarystycznyEntities db = new SkelpAkwarystycznyEntities();
-            var conDB = from a in db.Produkts
-                        join b in db.Kategorias
-                        on a.id_kategoria equals b.id_kategoria
-                        select new
-                        {
-                            a.nazwa_produktu,
-                            b.nazwa_kategori,
-                            a.cena_netto,
-                            a.cena_brutto,
-                            a.dostepnych_sztuk,
-                            a.dostepny,
-                        };
-            this.ProduktTab.ItemsSource = conDB.ToList();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM Produkt WHERE id_produktu = " +idProdukt.Text+" ", con);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Usunięto Rekord");
+                con.Close();
+                ClearData();
+                LoadGrid();
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Nie usunięto rekordu"+ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void Button_Click_Update(object sender, RoutedEventArgs e)
+        {
+            decimal cenaBrutto = decimal.Parse(cennaNetto.Text) * (decimal)1.27;
+            bool dos = false;
+            if (decimal.Parse(ilosc.Text) > 0)
+                dos = true;
+            con.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE Produkt set " +
+                "nazwa_produktu = " + nazwaProduktu.Text +
+                ", id_kategoria = " + IDkategoria.Text +
+                ", cena_netto = " + cennaNetto.Text +
+                ", cena_brutto = " + cenaBrutto +
+                ", dostepnych_sztuk = " + ilosc.Text +
+                ", dostepny = " + dos + "" +
+                idProdukt.Text+"", con);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Aktualizacja rekordu wykonana pomyslnie");
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show("Nie aktualizowano rekordu" + ex.Message);
+            }
+            finally
+            {
+                con?.Close();
+                ClearData();
+                LoadGrid();
+            }
         }
     }
 }

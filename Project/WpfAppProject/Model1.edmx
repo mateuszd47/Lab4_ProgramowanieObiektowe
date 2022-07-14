@@ -543,7 +543,7 @@ warning 6002: The table/view 'SkelpAkwarystyczny.dbo.Zamowienia_SklepStacjonarny
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SkelpAkwarystycznyEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SkelpAkwarystycznyEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="HodowcaPLs" EntityType="Self.HodowcaPL" />
           <EntitySet Name="Importers" EntityType="Self.Importer" />
           <EntitySet Name="Kategorias" EntityType="Self.Kategoria" />
@@ -597,7 +597,7 @@ warning 6002: The table/view 'SkelpAkwarystyczny.dbo.Zamowienia_SklepStacjonarny
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SkelpAkwarystycznyModelStoreContainer" CdmEntityContainer="SkelpAkwarystycznyEntities">
+        <EntityContainerMapping StorageEntityContainer="SkelpAkwarystycznyModelStoreContainer" CdmEntityContainer="SkelpAkwarystycznyEntities1">
           <EntitySetMapping Name="HodowcaPLs">
             <EntityTypeMapping TypeName="SkelpAkwarystycznyModel.HodowcaPL">
               <MappingFragment StoreEntitySet="HodowcaPL">

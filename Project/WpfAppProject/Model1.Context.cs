@@ -13,10 +13,10 @@ namespace WpfAppProject
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SkelpAkwarystycznyEntities : DbContext
+    public partial class SkelpAkwarystycznyEntities1 : DbContext
     {
-        public SkelpAkwarystycznyEntities()
-            : base("name=SkelpAkwarystycznyEntities")
+        public SkelpAkwarystycznyEntities1()
+            : base("name=SkelpAkwarystycznyEntities1")
         {
         }
     

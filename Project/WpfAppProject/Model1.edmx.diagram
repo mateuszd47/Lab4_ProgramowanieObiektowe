@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ab2b51cdba314708b2658daefc3702e6" Name="Diagram1">
+      <Diagram DiagramId="b352b331a76045c29225615a21ce55d7" Name="Diagram1">
         <EntityTypeShape EntityType="SkelpAkwarystycznyModel.HodowcaPL" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SkelpAkwarystycznyModel.Importer" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SkelpAkwarystycznyModel.Kategoria" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
