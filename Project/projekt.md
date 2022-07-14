@@ -24,8 +24,9 @@
         5. Ilosc
         6. Dostepnosc
     3. Przyciski
-        1. Wyslij(create)
-        2. Refresh
+        1. Send(create)
+        2. Update
+        3. Delete
 
 #### Techniczne
 
@@ -37,6 +38,8 @@
 2. **ORM - operacje na bazie**
     1. Dodawanie rekordów w bazie
     2. Pobieranie rekordów z bazy
+    3. Usuwanie rekordów z bazy
+    4. Aktualizacja rekordów z bazy
 3. **Walidacja danych**
     1. Podczas logowania
-    2. Podczas dodawania zadań
+    2. Podczas dodawania danych
