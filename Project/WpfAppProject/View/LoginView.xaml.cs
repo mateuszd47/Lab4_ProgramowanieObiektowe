@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace WpfAppProject.View
 {
@@ -84,7 +74,7 @@ namespace WpfAppProject.View
                 sqlCMD.Parameters.AddWithValue("@login", txtUser.Text);
                 sqlCMD.Parameters.AddWithValue("@password", txtPassword.Password);
                 int count = Convert.ToInt32(sqlCMD.ExecuteScalar());
-                if(count == 1)
+                if (count == 1)
                 {
                     MainWindow dashbord = new MainWindow();
                     dashbord.Show();
@@ -95,7 +85,7 @@ namespace WpfAppProject.View
                     MessageBox.Show("Username or password is iscorrent");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfAppProject.Pages
 {
@@ -94,13 +82,6 @@ namespace WpfAppProject.Pages
             }
             else
             {
-                bool Dost()
-                {
-                    decimal i = decimal.Parse(odebior.Text);
-                    if (i == 1)
-                        return true;
-                    return false;
-                }
                 SqlCommand cmd = new SqlCommand("INSERT INTO Zamowienia VALUES(@id_produktu, @sztuk, @czy_odebrano)", con);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@id_produktu", idPeoduktu.Text);
@@ -153,19 +134,12 @@ namespace WpfAppProject.Pages
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_Click_Update(object sender, RoutedEventArgs e)
         {
-            bool Dost()
-            {
-                decimal i = decimal.Parse(odebior.Text);
-                if (i == 1)
-                    return true;
-                return false;
-            }
             con.Open();
             int ID = int.Parse(idPeoduktu.Text);
             int I = int.Parse(ilosc.Text);
             int T = int.Parse(odebior.Text);
             int KOD = int.Parse(idZamowienia.Text);
-            SqlCommand cmd = new SqlCommand("UPDATE Zamowienia SET id_produktu = '" + ID +"' , sztuk = " + I +" , czy_odebrano = '" + T + "' WHERE id_zamowienia = '"+KOD+"' ", con);
+            SqlCommand cmd = new SqlCommand("UPDATE Zamowienia SET id_produktu = '" + ID + "' , sztuk = " + I + " , czy_odebrano = '" + T + "' WHERE id_zamowienia = '" + KOD + "' ", con);
             try
             {
                 cmd.ExecuteNonQuery();
@@ -185,5 +159,5 @@ namespace WpfAppProject.Pages
 
     }
 
-    
+
 }

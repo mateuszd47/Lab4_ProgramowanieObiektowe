@@ -169,11 +169,18 @@
                 HorizontalAlignment="Right" 
                 Margin="0 0 10 10">
                 <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Background" Value="#FF2AD87C"/>
+                    <Style 
+                        TargetType="Button">
+                        <Setter 
+                            Property="Background" 
+                            Value="#FF2AD87C"/>
                         <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#28AEED"/>
+                            <Trigger 
+                                Property="IsMouseOver" 
+                                Value="True">
+                                <Setter 
+                                    Property="Background" 
+                                    Value="#28AEED"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -184,12 +191,22 @@
                                 Height="40"
                                 CornerRadius="5"
                                 Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
+                            <ContentPresenter 
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            <Label Content="Id Kategoria:" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Height="28" Margin="230,0,0,0" VerticalAlignment="Top" Width="139"/>
+            <Label Content="1. Ryby" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Height="28" Margin="251,15,0,0" VerticalAlignment="Top" Width="139"/>
+            <Label Content="2. Rośliny" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Height="28" Margin="251,30,0,0" VerticalAlignment="Top" Width="139"/>
+            <Label Content="3. Grzałki" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Height="28" Margin="251,45,0,0" VerticalAlignment="Top" Width="139"/>
+            <Label Content="4. Podłoże" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Height="28" Margin="251,60,0,0" VerticalAlignment="Top" Width="139"/>
+            <Label Content="5. Oświetlenie" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Height="28" Margin="251,75,0,0" VerticalAlignment="Top" Width="139"/>
+            <Label Content="6. Dekoracje" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Height="28" Margin="251,90,0,0" VerticalAlignment="Top" Width="139"/>
+            <Label Content="7. Akwaria" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Height="28" Margin="251,105,0,0" VerticalAlignment="Top" Width="139"/>
+            <Label Content="8. Akwaria i zestawy" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Height="28" Margin="251,120,0,0" VerticalAlignment="Top" Width="139"/>
         </Grid>
         <Grid Grid.Column="1">
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">

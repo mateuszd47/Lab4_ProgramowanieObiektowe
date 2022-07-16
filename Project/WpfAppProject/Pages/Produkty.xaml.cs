@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfAppProject.Pages
 {
@@ -28,7 +16,7 @@ namespace WpfAppProject.Pages
         /// Initializes a new instance of the <see cref="Produkty" /> class.
         /// </summary>
         public Produkty()
-        {   
+        {
             InitializeComponent();
             LoadGrid();
         }
@@ -43,7 +31,7 @@ namespace WpfAppProject.Pages
         /// </summary>
         public void LoadGrid()
         {
-            SqlCommand cmd = new SqlCommand("select * from Produkt", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Produkt", con);
             DataTable dt = new DataTable();
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -70,9 +58,9 @@ namespace WpfAppProject.Pages
         /// <returns></returns>
         private bool Validation()
         {
-            if(nazwaProduktu.Text == "" || nazwaProduktu.Text == null)
+            if (nazwaProduktu.Text == "" || nazwaProduktu.Text == null)
                 return false;
-            if (IDkategoria.Text == "" || IDkategoria.Text == null)
+            if (IDkategoria.Text == "" || IDkategoria.Text == null || int.Parse(IDkategoria.Text) < 0 || int.Parse(IDkategoria.Text) > 9)
                 return false;
             if (cennaNetto.Text == "" || cennaNetto.Text == null)
                 return false;
@@ -131,7 +119,7 @@ namespace WpfAppProject.Pages
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Produkt WHERE id_produktu = " +idProdukt.Text+" ", con);
+            SqlCommand cmd = new SqlCommand("DELETE FROM Produkt WHERE id_produktu = " + idProdukt.Text + " ", con);
             try
             {
                 cmd.ExecuteNonQuery();
@@ -143,7 +131,7 @@ namespace WpfAppProject.Pages
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Nie usunięto rekordu"+ex.Message);
+                MessageBox.Show("Nie usunięto rekordu" + ex.Message);
             }
             finally
             {
@@ -163,18 +151,18 @@ namespace WpfAppProject.Pages
             if (decimal.Parse(ilosc.Text) > 0)
                 dos = 1;
             con.Open();
-            int K= int.Parse(IDkategoria.Text);
-            decimal CN= decimal.Parse(cennaNetto.Text);
+            int K = int.Parse(IDkategoria.Text);
+            decimal CN = decimal.Parse(cennaNetto.Text);
             int I = int.Parse(ilosc.Text);
-           
+
             int IDP = int.Parse(idProdukt.Text);
-            SqlCommand cmd = new SqlCommand("UPDATE Produkt set nazwa_produktu = '" + nazwaProduktu.Text +"', id_kategoria = " + K +", cena_netto = " + CN +", cena_brutto = " + cenaBrutto +", dostepnych_sztuk = " + I +", dostepny = " + dos + " WHERE id_produktu = " + IDP + " ", con);
+            SqlCommand cmd = new SqlCommand("UPDATE Produkt set nazwa_produktu = '" + nazwaProduktu.Text + "', id_kategoria = " + K + ", cena_netto = " + CN + ", cena_brutto = " + cenaBrutto + ", dostepnych_sztuk = " + I + ", dostepny = " + dos + " WHERE id_produktu = " + IDP + " ", con);
             try
             {
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Aktualizacja rekordu wykonana pomyslnie");
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show("Nie aktualizowano rekordu" + ex.Message);
             }
@@ -185,5 +173,6 @@ namespace WpfAppProject.Pages
                 LoadGrid();
             }
         }
+
     }
 }
