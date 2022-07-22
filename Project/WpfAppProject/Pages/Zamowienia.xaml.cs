@@ -31,7 +31,7 @@ namespace WpfAppProject.Pages
         /// </summary>
         public void LoadGrid()
         {
-            SqlCommand cmd = new SqlCommand("select * from Zamowienia", con);
+            SqlCommand cmd = new SqlCommand("SELECT id_zamowienia, Zamowienia.id_produktu, Produkt.nazwa_produktu, Zamowienia.sztuk, czy_odebrano FROM Zamowienia LEFT JOIN Produkt ON Zamowienia.id_produktu = Produkt.id_produktu", con);
             DataTable dt = new System.Data.DataTable();
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();

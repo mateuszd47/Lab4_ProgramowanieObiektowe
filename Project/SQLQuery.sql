@@ -67,7 +67,6 @@ CREATE TABLE [dbo].[Klienci](
 	[adres_email] [varchar](100) NOT NULL,
 	[adres] [varchar](100) NOT NULL,
 	[kodpocztowy] [varchar](20) NOT NULL,
-	[miejscowośc] [varchar](20) NOT NULL,
 	[klient_staly] [bit] NOT NULL,
 )
 
@@ -103,7 +102,7 @@ CREATE TABLE [dbo].[Zamowienia_SklepStacjonarny](
 
 -- 4)wypełniamy bezę danymi
 
-USE [HurtowniaAkwarystyczna]
+USE [SkelpAkwarystyczny]
 
 INSERT INTO Users (login, password)
 VALUES ('admin','admin')
@@ -140,11 +139,11 @@ VALUES ('Ryby'),
 ('Akwaria'),
 ('Awaria i zestawy')
 
-INSERT INTO Klienci(imie,nazwisko,telefon,adres_email,adres,kodpocztowy,miejscowośc,klient_staly)
-VALUES ('Jan','Kowalski','662 231 213','JanKow@wp.pl','Bochnia 31','32-700','Bochnia',0),
-('Mateusz','Dyga','663 121 213','mati@wp.pl','Bochnia 121','32-700','Bochnia',1),
-('Piotr','Nowak','833 231 323','PiNowak@gmail.com','Niepołomice 34','32-005','Niepołomice',0),
-('Marek','Kowalski','663 431 113','Kowal@interia.pl','Kraków 232','31-422','Kraków',0)
+INSERT INTO Klienci(imie,nazwisko,telefon,adres_email,adres,kodpocztowy,klient_staly)
+VALUES ('Jan','Kowalski','662 231 213','JanKow@wp.pl','Bochnia 31','32-700',0),
+('Mateusz','Dyga','663 121 213','mati@wp.pl','Bochnia 121','32-700',1),
+('Piotr','Nowak','833 231 323','PiNowak@gmail.com','Niepołomice 34','32-005',0),
+('Marek','Kowalski','663 431 113','Kowal@interia.pl','Kraków 232','31-422',0)
 
 INSERT INTO Produkt(nazwa_produktu,cena_netto,cena_brutto,id_kategoria,dostepnych_sztuk,dostepny)
 VALUES ('Neon Czerwony',3.47,4.50,1,1000,1),
@@ -173,7 +172,7 @@ INSERT INTO HodowcaPL_Importer (id_produktu,id_hodowcaPL)
 VALUES (4,2),
 (5,6)
 
-INSERT INTO SklepyStacjonarne(nazwa_sklepu,telefon,adres_email,adres,kodpocztowy,miejscowość)
+INSERT INTO SklepyStacjonarne(nazwa_sklepu,telefon,adres_email,adres,kodpocztowy, miejscowość)
 VALUES ('Fajna Rybka','621 731 282','FajnaRybka@gmail.com','Kraków 53','31-831','Kraków'),
 ('Jasiołek Barbara - Sklep zoologiczny','721 731 282','JasiBarbara@gmail.com','Bochnia 23','32-700','Bochnia'),
 ('Fiord Sklep zoologiczny','621 231 282','FiordSklepBoch@gmail.com','Bochnia 13','32-700','Bochnia'),
@@ -232,3 +231,5 @@ SELECT * fROM SklepyStacjonarne
 SELECT * fROM Zamowienia
 SELECT * fROM Zamowienia_Klient
 SELECT * fROM Zamowienia_SklepStacjonarny
+
+UPDATE Klienci SET imie = 'imie', nazwisko = 'nazwisko', telefon = '666666666', adres_email = 'mati@wp.pl', kodpocztowy = '32-700', adres = 'Bochnia21', klient_staly= '1' WHERE id_klient = '1' 

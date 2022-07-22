@@ -31,7 +31,7 @@ namespace WpfAppProject.Pages
         /// </summary>
         public void LoadGrid()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Produkt", con);
+            SqlCommand cmd = new SqlCommand("SELECT id_produktu, nazwa_produktu, cena_netto, cena_brutto, Kategoria.nazwa_kategori, dostepnych_sztuk, dostepny FROM Produkt LEFT JOIN Kategoria ON Produkt.id_kategoria = Kategoria.id_kategoria", con);
             DataTable dt = new DataTable();
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -146,11 +146,11 @@ namespace WpfAppProject.Pages
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void Button_Click_Update(object sender, RoutedEventArgs e)
         {
+            con.Open();
             decimal cenaBrutto = decimal.Parse(cennaNetto.Text) * (decimal)1.27;
             int dos = 0;
             if (decimal.Parse(ilosc.Text) > 0)
                 dos = 1;
-            con.Open();
             int K = int.Parse(IDkategoria.Text);
             decimal CN = decimal.Parse(cennaNetto.Text);
             int I = int.Parse(ilosc.Text);
