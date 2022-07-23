@@ -39,8 +39,9 @@
           2. Ilosc
           3. Odebrano 0/1
       3. Przyciski
-          1. Wyślij
-          2. Refresh 
+          1. Send
+          2. Update
+          3. Delete 
 
   3. Tabelka z klientami(Klienci)
       1. Zawartość tabel
@@ -51,8 +52,7 @@
           5. dres_email
           6. adres
           7. kodpocztowy
-          8. miejscowośc
-          9. klient_staly
+          8. klient_staly
       2. Pola do tworzenia
           1. imie
           2. nazwisko
@@ -62,8 +62,9 @@
           6. miejscowośc
           7. lient_staly
       3. Przyciski
-          1. Wyślij
-          2. Refresh
+          1. Send
+          2. Update
+          3. Delete 
 
   4. Tabelka z users(Users)
       1. Zawartość tabel
