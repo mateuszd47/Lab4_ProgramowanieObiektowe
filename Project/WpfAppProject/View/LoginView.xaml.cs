@@ -14,7 +14,7 @@ namespace WpfAppProject.View
     public partial class LoginView : Window
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LoginView" /> class.
+        /// Inicjuje nową instancję <see cref="LoginView" /> class.
         /// </summary>
         public LoginView()
         {
@@ -22,10 +22,10 @@ namespace WpfAppProject.View
         }
 
         /// <summary>
-        /// Handles the MouseDown event of the Window control.
+        /// Obsługuje zdarzenie MouseDown kontrolki Window.
         /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="MouseButtonEventArgs" /> instance containing the event data.</param>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e"> <see cref="MouseButtonEventArgs" /> instancja zawierająca dane zdarzenia.</param>
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -35,30 +35,30 @@ namespace WpfAppProject.View
         }
 
         /// <summary>
-        /// Handles the Click event of the BtnClose control.
+        /// Obsługuje zdarzenie Click kontrolki BtnClose.
         /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e"> <see cref="RoutedEventArgs" /> instancja zawierająca dane zdarzenia.</param>
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
         /// <summary>
-        /// Handles the Click event of the BtnMinimize control.
+        /// Obsługuje zdarzenie Click kontrolki BtnMinimize.
         /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e"> <see cref="RoutedEventArgs" /> instancja zawierająca dane zdarzenia.</param>
         private void BtnMinimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
 
         /// <summary>
-        /// Handles the Click event of the BtnLogin control.
+        /// Obsługuje zdarzenie Click kontrolki BtnLogin.
         /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e"> <see cref="RoutedEventArgs" /> instancja zawierająca dane zdarzenia.</param>
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             SqlConnection sqlCon = new SqlConnection(@"Data Source=MATEUSZ;Initial Catalog=SkelpAkwarystyczny;Integrated Security=True;");

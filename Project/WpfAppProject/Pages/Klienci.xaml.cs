@@ -8,17 +8,27 @@ namespace WpfAppProject.Pages
     /// <summary>
     /// Logika interakcji dla klasy Klienci.xaml
     /// </summary>
+    /// <seealso cref="System.Windows.Controls.Page" />
+    /// <seealso cref="System.Windows.Markup.IComponentConnector" />
     public partial class Klienci : Page
     {
-        /// <summary>Initializes a new instance of the <see cref="Klienci" /> class.</summary>
+        /// <summary>
+        /// Inicjuje nową instancję <see cref="Klienci" /> class.
+        /// </summary>
         public Klienci()
         {
             InitializeComponent();
             LoadGrid();
         }
 
+        /// <summary>
+        /// Połączenie
+        /// </summary>
         SqlConnection con = new SqlConnection(@"Data Source=MATEUSZ;Initial Catalog=SkelpAkwarystyczny;Integrated Security=True");
 
+        /// <summary>
+        /// Ładowanie bazy
+        /// </summary>
         public void LoadGrid()
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM Klienci", con);
@@ -30,6 +40,9 @@ namespace WpfAppProject.Pages
             KlienciTab.ItemsSource = dt.DefaultView;
         }
 
+        /// <summary>
+        /// Czyszczenie danych.
+        /// </summary>
         public void ClearData()
         {
             imie.Clear();
@@ -42,7 +55,7 @@ namespace WpfAppProject.Pages
         }
 
         /// <summary>
-        /// Validations this instance.
+        /// Walidacje tej instancji.
         /// </summary>
         /// <returns></returns>
         private bool Validation()
@@ -65,6 +78,11 @@ namespace WpfAppProject.Pages
             return true;
         }
 
+        /// <summary>
+        /// Obsługuje zdarzenie Click kontrolki Button.
+        /// </summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e"> <see cref="RoutedEventArgs"/> instancja zawierająca dane zdarzenia.</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -102,10 +120,10 @@ namespace WpfAppProject.Pages
         }
 
         /// <summary>
-        /// Handles the Delete event of the Button_Click control.
+        /// Obsługuje zdarzenie Delete kontrolki Button_Click.
         /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e"> <see cref="RoutedEventArgs" /> Instancja zawierająca dane zdarzenia.</param>
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
             con.Open();
@@ -130,10 +148,10 @@ namespace WpfAppProject.Pages
         }
 
         /// <summary>
-        /// Handles the Update event of the Button_Click control.
+        /// Obsługuje zdarzenie Update kontrolki Button_Click.
         /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e"><see cref="RoutedEventArgs" /> Instancja zawierająca dane zdarzenia.</param>
         private void Button_Click_Update(object sender, RoutedEventArgs e)
         {
             con.Open();
